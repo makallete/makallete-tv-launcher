@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T10:59:12.934777+00:00",
+  "title": "Design System: Makallete TV Launcher promotional site",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "White paper"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Fine neutral rule"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Site display",
+        "purpose": "Hero introduction in inherited Manrope."
+      },
+      "tv-display": {
+        "displayName": "TV title",
+        "purpose": "Launcher preview only, in Bricolage."
+      }
+    },
+    "shadows": [
+      {
+        "name": "television-ambient",
+        "value": "0 16px 30px #00000015",
+        "purpose": "TV shell only; surrounding page remains flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "screen-tone",
+        "value": "background .5s ease-out",
+        "purpose": "Declared preview background transition."
+      },
+      {
+        "name": "app-selection",
+        "value": "transform .25s ease-out",
+        "purpose": "Selected app scales to 1.035."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition: none !important; scroll-behavior: auto",
+        "purpose": "Applied when prefers-reduced-motion is reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack-hero",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Setup link and copy action.",
+      "html": "<button class=\"ds-primary\">Prompt’u kopyala</button>",
+      "css": ".ds-primary{font:600 13px/1.7 Manrope,Arial,sans-serif;display:inline-block;cursor:pointer;min-height:44px;padding:10px 17px;background:var(--ink,#171717);color:var(--paper,#fff);border:1px solid var(--ink,#171717);border-radius:5px;white-space:nowrap}.ds-primary:hover{background:#333}.ds-primary:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}"
+    },
+    {
+      "name": "Source link",
+      "kind": "button",
+      "refersTo": "source-link",
+      "description": "Bordered GitHub and guide links.",
+      "html": "<a class=\"ds-source\" href=\"#guide\">Komutları ve geri alma adımlarını aç</a>",
+      "css": ".ds-source{font:600 14px/1.35 Manrope,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:9px 14px;min-height:42px;color:var(--ink,#171717);border:1px solid var(--line,#d7d7d4);border-radius:12px;text-decoration:none}.ds-source:hover{background:var(--wash,#f5f5f2);border-color:#999}.ds-source:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}"
+    },
+    {
+      "name": "Prompt field",
+      "kind": "input",
+      "refersTo": "prompt-field",
+      "description": "Readonly setup text with manual-copy fallback.",
+      "html": "<textarea class=\"ds-prompt\" readonly rows=\"4\" aria-label=\"Codex / Claude Code’a gönder\">Bu klasördeki Makallete TV Launcher projesini Android TV’me kurmama yardım et.</textarea>",
+      "css": ".ds-prompt{font:13px/1.75 Manrope,Arial,sans-serif;display:block;width:100%;resize:vertical;min-height:200px;padding:16px;color:var(--ink,#171717);background:var(--wash,#f5f5f2);border:1px solid var(--line,#d7d7d4);border-radius:5px;caret-color:var(--ink,#171717)}.ds-prompt:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}"
+    },
+    {
+      "name": "Language navigation",
+      "kind": "nav",
+      "refersTo": "language-active",
+      "description": "Pressed state identifies the active language.",
+      "html": "<nav class=\"ds-languages\" aria-label=\"Language\"><button aria-pressed=\"true\">TR</button><button aria-pressed=\"false\">EN</button></nav>",
+      "css": ".ds-languages{display:flex;gap:3px}.ds-languages button{font:12px/1.7 Manrope,Arial,sans-serif;cursor:pointer;border:0;background:var(--paper,#fff);color:var(--ink,#171717);padding:7px;min-width:34px;min-height:38px}.ds-languages button[aria-pressed=true]{background:var(--ink,#171717);color:var(--paper,#fff);border-radius:4px}.ds-languages button:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}"
+    },
+    {
+      "name": "Numbered setup step",
+      "kind": "custom",
+      "refersTo": "step-number",
+      "description": "Outlined marker with title and explanatory text.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-number\">1</span><h3>TV’nin modelini kontrol et.</h3><p>Android sürümünü Ayarlar’dan kontrol et.</p></div>",
+      "css": ".ds-step{position:relative;padding-left:68px;font-family:Manrope,Arial,sans-serif;color:var(--ink,#171717);min-height:52px}.ds-number{position:absolute;left:0;top:0;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--ink,#171717);border-radius:50%;background:var(--wash,#f5f5f2);font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}.ds-step h3{font-size:17px;font-weight:600;line-height:1.5;margin:3px 0 7px}.ds-step p{font-size:14px;line-height:1.8;color:var(--secondary,#555);margin:0}"
+    },
+    {
+      "name": "Compatibility disclosure",
+      "kind": "custom",
+      "description": "Native expandable compatibility and privacy details.",
+      "html": "<details class=\"ds-details\"><summary>TV’mle çalışır mı?</summary><p>Android 11 ve üzeri gerekiyor. Diğer cihazlar henüz doğrulanmadı.</p></details>",
+      "css": ".ds-details{font-family:Manrope,Arial,sans-serif;color:var(--ink,#171717);border-top:1px solid var(--line,#d7d7d4);border-bottom:1px solid var(--line,#d7d7d4)}.ds-details summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;padding:20px 0;gap:20px;min-height:55px}.ds-details summary::-webkit-details-marker{display:none}.ds-details summary::after{content:\"+\";font-size:20px;font-weight:400}.ds-details[open]>summary::after{content:\"−\"}.ds-details summary:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}.ds-details p{font-size:14px;line-height:1.7;color:var(--secondary,#555);margin:0;padding:0 0 22px;max-width:72ch}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Inherited white-paper setup guide",
+    "overview": "The site inherits the existing Kindle Daybook authority: white paper, dark Manrope text, generous space, fine rules and restrained controls. The TV demonstration retains the launcher’s own Bricolage and Onest typography inside its dark screen. This is a continuation of the established visual system.",
+    "keyCharacteristics": [
+      "White paper and ink with fine neutral rules.",
+      "Spacious numbered instructions and readable supporting copy.",
+      "A large, fictional TV demonstration with focus-driven color.",
+      "Natural Turkish and an English alternative."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the inherited Manrope, paper, ink and fine-rule vocabulary.",
+      "Do label fictional demonstration data visibly.",
+      "Do keep setup content readable in document flow and downloads usable without JavaScript.",
+      "Do retain keyboard focus, reduced-motion support and the exact author signature “Developed by makallete”."
+    ],
+    "donts": [
+      "Don’t extend the TV’s saturated palette or glow to the surrounding page.",
+      "Don’t introduce real household data or unverified performance claims.",
+      "Don’t replace the inherited visual authority with a new identity."
+    ]
+  }
+}

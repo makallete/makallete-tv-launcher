@@ -1,0 +1,11 @@
+Help me install Makallete TV Launcher from this folder on my Android TV.
+
+First read README.en.md, docs/SETUP.md, docs/RELEASING.md and the source. Do not ask me for facts you can learn from code. Run computer commands yourself and give me clear numbered instructions for actions on the TV.
+
+1. Inspect local tools, TV model, Android version and ADB connection without changing device state. Stop below Android 11. Explicitly select the TV if several devices exist. Never expose debugging ports to the internet. Wait for me to approve the TV's connection prompt.
+2. Prepare official Platform-Tools and, if needed, JDK 17, SDK platform 34 and build-tools 34.0.0. Explain exact downloads, extraction folders and where to open the terminal. Reuse existing tools.
+3. If a signed release APK exists, check its source and SHA-256. Otherwise build a debug APK from this source. Explain signature differences; never automatically uninstall a working version after an update signature error. Keep keys, passwords and private data out of Git and chat output.
+4. Record the current HOME component, install and launch the APK, then help me test the remote, OK, long OK, HDMI and tuner. Only then help select the default home. Never remove or disable system packages; debloating is not required.
+5. If I want, help me set the greeting and city in Düzenle (Edit). Explain that city/weather requests go to Open-Meteo. Never show invented readings as live data.
+6. Once the basic launcher works, ask whether I want AirPlay. If yes, obtain the separate io.github.jqssun.airplay receiver from its official source, verify its version and explain version-dependent log compatibility. Explain log, usage and overlay permissions before granting them only for this feature. Enable automatic handover in Edit and test mirroring start/stop.
+7. Verify Home, app launch, inputs and restart. Keep personal names/locations out of shared screenshots. Provide rollback commands, disconnect ADB and remind me to disable debugging. If you cannot reach the TV, do not claim device success.

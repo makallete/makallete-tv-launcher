@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Makallete TV Launcher</string>
+    <string name="watcher_channel">Arka plan</string>
+    <string name="watcher_title">Makallete TV Launcher çalışıyor</string>
+    <string name="watcher_text">Yansıtma bitince ana ekrana döner</string>
+    <string name="cover_starting">Yansıtma başlıyor…</string>
+</resources>

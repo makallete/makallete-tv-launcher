@@ -1,0 +1,20 @@
+local.properties
+.gradle/
+.kotlin/
+**/build/
+*.apk
+*.aab
+*.jks
+*.keystore
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+.idea/
+.DS_Store
+.netlify/
+private/
+
+# Generated download bundle; created from the tracked source.
+site/makallete-tv-launcher-source.zip
