@@ -12,3 +12,14 @@ The follow-up website brief requests real brands and a Philips room scene. These
 ## Exact generation prompt
 
 Create a photorealistic front-on interior product mockup using this exact Philips 65PUS7906 television as the reference. Preserve its precise slim dark gray bezel, tiny centered PHILIPS branding on the bottom bezel, and its two original splayed feet near the outer edges. Replace the screen contents with an entirely blank uniform almost-black screen (#090d14), no graphics, no reflections, no words. Wide landscape composition, camera exactly perpendicular to the screen, absolutely no perspective skew or tilt, 16:9 screen remains a perfect rectangle. Frame a believable stylish quiet living room at dusk: warm light-gray limewash plaster wall, low dark walnut console across bottom, a small leafy plant and a couple of ceramic objects at the far edges only, subtle floor and daylight shadows. The television dominates: its SCREEN occupies about 76% of image width, centered horizontally (left12%,right88%), screen top about17% of image, screen bottom around81% for a 3:2 output; console top just below the TV feet at around89%. Television must be large and readable, no furniture in front of screen. Soft neutral ambient lighting: no colored glow on wall, no fixed Ambilight colors, no bright lamp in center. We will add a changing wall-light effect and a live interactive UI in code. Editorial interior photography, real material detail, muted warm neutral tones, sharp device frame. No text except authentic tiny PHILIPS badge, no extra brand names, no people, no personal photos, no screens other than this television. Output landscape 1536x1024.
+
+## Screen-mirroring demo
+
+The Mac/iPhone interfaces are coded illustrative screens, based on Apple's current support guides accessed on 2026-11-01. They show Control Center / Screen Mirroring, a selected example receiver named Makallete TV, and the selected content mirrored to the television: a Claude Code terminal on Mac and an app-filled home screen on iPhone. The content is illustrative; no private screenshots or wallpaper/photo-sharing examples are used.
+
+- iPhone flow and current support screenshots: https://support.apple.com/tr-tr/102661 . The current article uses iOS 26 screenshots even though iOS 27 is released; the coded illustration follows the guide's mirroring panel rather than claiming a pixel-exact iOS 27 capture.
+- Mac Control Center: https://support.apple.com/tr-tr/guide/mac-help/mchl50f94f8f/mac .
+- Mac AirPlay: https://support.apple.com/tr-tr/guide/mac-help/mchld7e543a0/mac .
+- Current OS release reference: https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/ .
+
+GitHub mark: `github.svg`, reused from the same author’s previous site at https://kindle-daybook-makallete.netlify.app/assets/github.svg . GitHub branding remains its owner’s trademark.

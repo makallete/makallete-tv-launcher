@@ -12,15 +12,15 @@ A lightweight, ad-free home screen for Android TV. Apps, HDMI inputs and a handf
 - Focus-driven ambient color, clock, date and optional personal greeting.
 - HDMI/CEC and tuner inputs; Ambilight panel shortcut on supported Philips TVs.
 - Optional city weather from Open-Meteo, manual Cloudflare download/latency test, and memory tools.
-- Optional automatic handover to a **separately installed** AirPlay receiver during mirroring.
+- Automatic handover to a **separately installed** AirPlay receiver during mirroring.
 
-Names, weather and the AirPlay watcher are off by default. Use **Düzenle** (Edit) to set a greeting and search for your city. Preferences stay on the TV; city queries and selected coordinates are sent to Open-Meteo. No location permission or account is needed.
+Names, weather and the AirPlay watcher are off by default in the APK. The full setup prompt installs the receiver and configures permissions and automatic handover. Use **Düzenle** (Edit) to set a greeting and search for your city. Preferences stay on the TV; city queries and selected coordinates are sent to Open-Meteo. No location permission or account is needed.
 
 ## Install
 
 1. Follow the [numbered guide](docs/SETUP.md) for exact downloads, folders and TV actions.
 2. If a signed APK is available, download it from this repository's Releases page. Otherwise build the source with Android Studio. A source ZIP cannot be installed as an APK.
-3. For Codex or Claude Code, open the project folder and use the [installation prompt](docs/INSTALL_PROMPT.en.txt).
+3. For Codex or Claude Code, send the [installation prompt](docs/INSTALL_PROMPT.en.txt) in a new chat. It includes the repository URL so the agent can fetch the source from GitHub.
 
 ## Build
 
@@ -38,10 +38,10 @@ Requires Android 11 / API 30 or newer. HDMI, tuner and Ambilight support depend 
 
 ## Website and privacy
 
-The static bilingual site is in `site/`, with Netlify settings in `netlify.toml`. Run `python3 scripts/package-source.py` to generate the source download ZIP. Preview locally with `python3 -m http.server 8080 --directory site`. The preview uses real app brands and İstanbul as the example city. Time and date follow live Türkiye time; weather and device readings are illustrative. The room image was generated from a Philips 65PUS7906/62 reference and is not a device capture. See [SECURITY.md](SECURITY.md) for network and permission details.
+The static bilingual site is in `site/`, with Netlify settings in `netlify.toml`. The site links to GitHub for source review and setup, and to GitHub Releases for the signed APK. It does not host a direct source ZIP. If needed, `python3 scripts/package-source.py` creates a release archive under `build/distributions/`. Preview locally with `python3 -m http.server 8080 --directory site`. The preview uses real app brands and İstanbul as the example city. Time and date follow live Türkiye time; weather and device readings are illustrative. The site includes a Philips 65PUS7906/62-style TV and interactive Mac/iPhone screen-mirroring previews. See [SECURITY.md](SECURITY.md) for network and permission details.
 
 ## License
 
-MIT is the suggested license included for the launcher and site code. Fonts retain their OFL licenses. The optional GPL-3.0 AirPlay receiver is a separate project and is not bundled. See [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
+The launcher and site code are licensed under MIT. Fonts retain their OFL licenses. The GPL-3.0 AirPlay receiver is a separate project and is not bundled. See [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 Developed by makallete

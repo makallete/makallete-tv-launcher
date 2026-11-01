@@ -1,11 +1,13 @@
-Help me install Makallete TV Launcher from this folder on my Android TV.
+Install Makallete TV Launcher and AirPlay support on my Android TV.
 
-First read README.en.md, docs/SETUP.md, docs/RELEASING.md and the source. Do not ask me for facts you can learn from code. Run computer commands yourself and give me clear numbered instructions for actions on the TV.
+Repository: https://github.com/makallete/makallete-tv-launcher
 
-1. Inspect local tools, TV model, Android version and ADB connection without changing device state. Stop below Android 11. Explicitly select the TV if several devices exist. Never expose debugging ports to the internet. Wait for me to approve the TV's connection prompt.
-2. Prepare official Platform-Tools and, if needed, JDK 17, SDK platform 34 and build-tools 34.0.0. Explain exact downloads, extraction folders and where to open the terminal. Reuse existing tools.
-3. If a signed release APK exists, check its source and SHA-256. Otherwise build a debug APK from this source. Explain signature differences; never automatically uninstall a working version after an update signature error. Keep keys, passwords and private data out of Git and chat output.
-4. Record the current HOME component, install and launch the APK, then help me test the remote, OK, long OK, HDMI and tuner. Only then help select the default home. Never remove or disable system packages; debloating is not required.
-5. If I want, help me set the greeting and city in Düzenle (Edit). Explain that city/weather requests go to Open-Meteo. Never show invented readings as live data.
-6. Once the basic launcher works, ask whether I want AirPlay. If yes, obtain the separate io.github.jqssun.airplay receiver from its official source, verify its version and explain version-dependent log compatibility. Explain log, usage and overlay permissions before granting them only for this feature. Enable automatic handover in Edit and test mirroring start/stop.
-7. Verify Home, app launch, inputs and restart. Keep personal names/locations out of shared screenshots. Provide rollback commands, disconnect ADB and remind me to disable debugging. If you cannot reach the TV, do not claim device success.
+Clone the project into a permanent folder on my computer. If the repository is already open, use it and check before changing existing files. Read README.en.md, docs/SETUP.md and the source. Run computer commands yourself and guide me through the TV actions step by step.
+
+1. Check the TV model, Android version and existing tools. Stop below Android 11. Select the correct TV if several ADB devices exist. Wait for me to authorize the connection on the TV.
+2. Use official Platform-Tools. Get the signed APK from GitHub Releases when available and verify its SHA-256. If building from source is necessary, prepare JDK 17, Android SDK 34 and Build-Tools 34.0.0. Do not automatically remove a working installation after a signature mismatch.
+3. Record the current HOME component for recovery. Install the launcher and check remote navigation, OK, long OK, app launch, HDMI and tuner inputs. Then help me select it as the default home. Do not remove or disable system apps.
+4. Help me set the greeting and city in Düzenle (Edit). Explain that weather requests send city coordinates to Open-Meteo.
+5. Install io.github.jqssun.airplay from its official source, or check its working version and settings if it is already installed. Explain log, usage and overlay access, then grant the permissions needed for handover. Disable launch_on_connect in the receiver and enable automatic handover in the launcher’s Edit screen. AirPlay is part of this installation; do not ask separately whether I want it.
+6. Test screen mirroring from a Mac or iPhone with me. Check that mirroring opens the receiver, stopping returns to the launcher, and the setup works after restarting the TV. Explain any receiver compatibility or access problem and the next action needed.
+7. Provide steps to restore the old home and uninstall the app. Disconnect ADB and remind me to disable TV debugging. State which checks you could not complete. Keep personal information, screenshots, passwords and signing keys out of Git and chat output.

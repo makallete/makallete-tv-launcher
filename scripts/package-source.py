@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Create the public download from Git-tracked source, or a clean extracted source ZIP."""
+"""Create a source archive for GitHub Releases, outside the public website."""
 from pathlib import Path
 import subprocess
 import zipfile
 
 root = Path(__file__).resolve().parents[1]
-target = root / 'site/makallete-tv-launcher-source.zip'
+target = root / 'build/distributions/makallete-tv-launcher-source.zip'
+target.parent.mkdir(parents=True, exist_ok=True)
 if (root / '.git').exists():
     paths = subprocess.check_output(['git', '-C', str(root), 'ls-files', '-z']).decode().split('\0')
     files = [root / path for path in paths if path]

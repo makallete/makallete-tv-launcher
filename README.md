@@ -12,15 +12,15 @@ Android TV için hafif, reklamsız bir ana ekran. Uygulamaların, HDMI girişler
 - Seçili uygulamanın rengini arka plana taşır. Saat, tarih ve isteğe bağlı kişisel selamlama gösterir.
 - HDMI/CEC cihazlarını ve varsa anten girişini gösterir. Destekleyen Philips TV'lerde Ambilight paneline ulaşır.
 - Seçtiğiniz şehir için Open-Meteo hava durumu, elle başlatılan Cloudflare hız testi ve bellek araçları sunar.
-- İsteğe bağlı, **ayrı kurulan** AirPlay alıcısıyla yansıtma başlayınca alıcıya, bitince ana ekrana geçebilir.
+- **Ayrı kurulan** AirPlay alıcısıyla yansıtma başlayınca alıcıya, bitince ana ekrana geçebilir.
 
-İlk açılışta isim yoktur, hava durumu ve AirPlay bekçisi kapalıdır. Üstteki **Düzenle** düğmesinden adınızı ve şehrinizi seçebilirsiniz. Bu bilgiler yalnızca TV'de saklanır. Hava durumu için konum izni veya hesap gerekmez; şehir araması ve seçilen koordinatlar Open-Meteo'ya gönderilir.
+İlk açılışta isim yoktur, hava durumu ve AirPlay bekçisi kapalıdır. Üstteki **Düzenle** düğmesinden adınızı ve şehrinizi seçebilirsiniz. Kurulum prompt’u AirPlay alıcısını ve gerekli izinleri de kurup otomatik geçişi etkinleştirir. Bu bilgiler yalnızca TV'de saklanır. Hava durumu için konum izni veya hesap gerekmez; şehir araması ve seçilen koordinatlar Open-Meteo'ya gönderilir.
 
 ## İlk kez kuruyorsanız
 
 1. [Kurulum rehberini](docs/KURULUM.md) açın. İndirilecek araçlar, klasörler ve TV'de yapılacaklar numaralı anlatılır.
 2. Hazır imzalı APK yayımlanmışsa bu reponun **Releases** bölümünden indirin. Yoksa kaynak kodu Android Studio ile derleyin. Kaynak ZIP bir APK değildir ve doğrudan TV'ye kurulmaz.
-3. Codex veya Claude Code kullanıyorsanız [hazır promptu](docs/INSTALL_PROMPT.tr.txt) proje klasörüyle birlikte verin.
+3. Codex veya Claude Code kullanıyorsanız [hazır promptu](docs/INSTALL_PROMPT.tr.txt) yeni bir sohbete verin; repo adresi promptun içinde bulunur, araç kaynak kodunu GitHub’dan alır.
 
 ## Geliştirme
 
@@ -38,10 +38,10 @@ Android 11 (API 30) altı desteklenmez. HDMI, anten ve Ambilight üreticiye bağ
 
 ## Site
 
-`site/` yalnızca statik dosyalardan oluşur; `netlify.toml` yayın klasörünü tanımlar; `python3 scripts/package-source.py` indirilebilir kaynak ZIP’ini üretir. Yerelde `python3 -m http.server 8080 --directory site` çalıştırıp `http://localhost:8080` açın. Önizleme gerçek uygulama markalarını ve İstanbul örnek şehrini kullanır. Saat ve tarih canlı Türkiye saatidir; hava ve cihaz ölçümleri örnektir. Philips 65PUS7906/62 referanslı oda görseli AI ile hazırlanmıştır; gerçek TV ekran görüntüsü değildir.
+`site/` yalnızca statik dosyalardan oluşur; `netlify.toml` yayın klasörünü tanımlar. Site, kod inceleme ve kurulum için GitHub’a, hazır APK için GitHub Releases’e yönlendirir; doğrudan kaynak ZIP’i sunmaz. `python3 scripts/package-source.py` gerekirse GitHub Releases için `build/distributions/` altında kaynak arşivi üretir. Yerelde `python3 -m http.server 8080 --directory site` çalıştırıp `http://localhost:8080` açın. Önizleme gerçek uygulama markalarını ve İstanbul örnek şehrini kullanır. Saat ve tarih canlı Türkiye saatidir; hava ve cihaz ölçümleri örnektir. Site, Philips 65PUS7906/62 görünümünde bir TV ve Mac/iPhone ekran yansıtma önizlemeleri içerir.
 
 ## Lisans
 
-Önerilen ve bu pakete eklenen lisans **MIT**: launcher ve site kodunun yeniden kullanılmasını kolaylaştırır. Fontlar kendi OFL lisanslarıyla gelir; isteğe bağlı AirPlay alıcısı ayrı GPL-3.0 projesidir ve pakete dahil değildir. Ayrıntılar: [LICENSE](LICENSE), [üçüncü taraf bildirimleri](THIRD_PARTY_NOTICES.md).
+Launcher ve site kodu **MIT** lisanslıdır. Fontlar kendi OFL lisanslarıyla gelir; isteğe bağlı AirPlay alıcısı ayrı GPL-3.0 projesidir ve pakete dahil değildir. Ayrıntılar: [LICENSE](LICENSE), [üçüncü taraf bildirimleri](THIRD_PARTY_NOTICES.md).
 
 Developed by makallete

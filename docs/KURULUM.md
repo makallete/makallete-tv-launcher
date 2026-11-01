@@ -63,9 +63,9 @@ Ardından Home'a basıp Makallete TV Launcher'ı ve varsa Her zaman seçeneğini
 
 Üretici izin vermiyorsa burada durup modele uygun yöntemi araştırın. Bazı Philips modelleri kendi launcher'ını zorla açar. Bu genel rehber hiçbir sistem paketini kapatmaz; `tv-debloat` gerekmez ve projeye dahil değildir.
 
-## 7. AirPlay'i yalnızca istiyorsanız ekleyin
+## 7. AirPlay alıcısını ve otomatik geçişi kurun
 
-Launcher tek başına AirPlay alıcısı değildir. [F-Droid](https://f-droid.org/packages/io.github.jqssun.airplay/) üzerinden `io.github.jqssun.airplay` alıcısını indirin. Özgün projede 0.0.36 kullanıldı; daha yeni sürümlerin log uyumluluğu doğrulanmadı. APK'yı `platform-tools` içine `airplay.apk` adıyla koyun ve kurun:
+Kurulum prompt’u bu adımı launcher kurulumu ile birlikte tamamlar. Launcher tek başına AirPlay alıcısı değildir. [F-Droid](https://f-droid.org/packages/io.github.jqssun.airplay/) üzerinden `io.github.jqssun.airplay` alıcısını indirin. Özgün projede 0.0.36 kullanıldı; daha yeni sürümlerin log uyumluluğu doğrulanmadı. APK'yı `platform-tools` içine `airplay.apk` adıyla koyun ve kurun:
 
 ```sh
 ./adb install -r airplay.apk
@@ -89,7 +89,7 @@ READ_LOGS cihaz kayıtlarına, kullanım izni öndeki uygulama bilgisine, overla
 
 ## 8. Bitirirken ve geri alma
 
-Home, uygulama açma, uzun OK, girişler, yeniden açılış ve varsa AirPlay'i kontrol edin. Hız testi yaklaşık 25 MB indirebilir. Bellek temizleme sonucu TV'nin Android sürümüne bağlıdır.
+Home, uygulama açma, uzun OK, girişler, yeniden açılış ve AirPlay'i kontrol edin. Hız testi yaklaşık 25 MB indirebilir. Bellek temizleme sonucu TV'nin Android sürümüne bağlıdır.
 
 Eski ana ekrana dönmek için TV'nin varsayılan uygulamalar menüsünden eski launcher'ı seçin veya kaydettiğiniz bileşen adıyla `./adb shell cmd package set-home-activity ESKI_PAKET/ESKI_ACTIVITY` çalıştırın. Önceki Philips ana ekranı daha önce kapatılmışsa `./adb shell pm enable com.google.android.tvlauncher` yeniden etkinleştirir; bu yalnızca o paketi kullanan TV'ler içindir. Eski Home çalıştıktan sonra isterseniz `./adb uninstall tv.makallete.launcher` ile launcher'ı kaldırın; yerel ayarlar silinir.
 

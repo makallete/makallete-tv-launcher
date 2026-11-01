@@ -63,9 +63,9 @@ Press Home and choose Makallete TV Launcher / Always if offered. If no chooser a
 
 If your vendor blocks this, stop and investigate your model. Some Philips TVs force the vendor launcher back to the foreground. This general guide never disables system packages; no debloat tools are needed or included.
 
-## 7. Optional AirPlay
+## 7. Install the AirPlay receiver and automatic handover
 
-The launcher is not an AirPlay receiver. Download `io.github.jqssun.airplay` from [F-Droid](https://f-droid.org/packages/io.github.jqssun.airplay/). The original integration used 0.0.36; later log formats are unverified. Save the APK as `airplay.apk` inside `platform-tools`:
+The setup prompt completes this step alongside the launcher installation. The launcher is not an AirPlay receiver. Download `io.github.jqssun.airplay` from [F-Droid](https://f-droid.org/packages/io.github.jqssun.airplay/). The original integration used 0.0.36; later log formats are unverified. Save the APK as `airplay.apk` inside `platform-tools`:
 
 ```sh
 ./adb install -r airplay.apk
@@ -89,7 +89,7 @@ Log access reads device logs; usage access identifies the foreground app; overla
 
 ## 8. Verify and recover
 
-Check Home, app launch, long OK, inputs, restart and optional AirPlay. The speed test can download about 25 MB. Memory cleanup depends on Android restrictions.
+Check Home, app launch, long OK, inputs, restart and AirPlay. The speed test can download about 25 MB. Memory cleanup depends on Android restrictions.
 
 To restore the old home, select it in the TV's default apps settings, or run `./adb shell cmd package set-home-activity OLD_PACKAGE/OLD_ACTIVITY` with the component you recorded. If the original Philips launcher had previously been disabled, `./adb shell pm enable com.google.android.tvlauncher` re-enables it on models using that package. Once the old home works, `./adb uninstall tv.makallete.launcher` removes this launcher and its preferences. The separate AirPlay receiver stays installed.
 

@@ -22,6 +22,15 @@ colors:
   ambilight-bein: "#8e56dc"
   ambilight-hbo: "#6f87d8"
   tv-status: "#81c7a9"
+  mirror-device: "#242629"
+  mirror-target: "#050505"
+  mirror-picker-ink: "#1c2737"
+  mirror-picker-mac: "#dce6eff0"
+  mirror-picker-phone: "#c8d8e6e8"
+  terminal-ground: "#111418"
+  terminal-text: "#e5e6e8"
+  terminal-accent: "#d58d6b"
+  terminal-success: "#85b883"
 typography:
   display:
     fontFamily: "Manrope, Arial, sans-serif"
@@ -56,12 +65,19 @@ typography:
     letterSpacing: "-0.035em"
   tv-body:
     fontFamily: "Onest, sans-serif"
+  terminal:
+    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    fontSize: "3.1cqw"
+    lineHeight: 1.6
 rounded:
   language: "4px"
   control: "5px"
   screen: "0"
   source-link: "12px"
   room: "10px"
+  mirror-target: "8px"
+  mirror-picker-mac: "9px"
+  mirror-picker-phone: "20px"
   preview-app: ".65cqw"
   step: "50%"
 spacing:
@@ -95,6 +111,18 @@ components:
     textColor: "{colors.paper}"
     rounded: "{rounded.language}"
     padding: "7px"
+  mirror-tab:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.control}"
+    padding: "9px 22px"
+  mirror-tab-active:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+  mirror-picker-mac:
+    backgroundColor: "{colors.mirror-picker-mac}"
+    textColor: "{colors.mirror-picker-ink}"
+    rounded: "{rounded.mirror-picker-mac}"
   preview-app:
     backgroundColor: "{colors.tv-tile}"
     rounded: "{rounded.preview-app}"
@@ -144,13 +172,13 @@ At the mobile breakpoint the display becomes 36px, section headings 24px, introd
 
 ## Layout
 
-The actual outer maximum width is **1160px**, including horizontal padding under border-box sizing. Desktop gutters are 28px, mobile gutters 20px. Header minimum height is 84px (82px mobile). Hero columns use a .7:1.6 ratio, 40px gap, 72px top and 68px bottom padding. The 1536×1024 room plate is 3:2; its HTML screen overlays the photographed television. The story uses 1:1.5 columns and a 55px gap. The dedicated AirPlay explanation repeats the story’s two-column structure, with 48px vertical padding, then 32px and one column on mobile. Setup, prompt and compatibility sections share an 820px maximum width and remain aligned with the content start.
+The actual outer maximum width is **1160px**, including horizontal padding under border-box sizing. Desktop gutters are 28px, mobile gutters 20px. Header minimum height is 84px (82px mobile). Hero columns use a .7:1.6 ratio, 40px gap, 72px top and 68px bottom padding. The 1536×1024 room plate is 3:2; its HTML screen overlays the photographed television. The story uses 1:1.5 columns and a 55px gap. The dedicated AirPlay explanation repeats the story’s two-column structure, with 48px vertical padding, then 32px and one column on mobile. Its full-width demonstration row uses source / arrow / TV columns (.8fr / 32px / 1.3fr) and 20px gaps. At 600px it stacks, hides the arrow and centers a source up to 290px wide; the iPhone frame is 180px desktop and 170px mobile. Setup, prompt and compatibility sections share an 820px maximum width and remain aligned with the content start.
 
 At 900px and below, the hero becomes one column with a 38px gap and 45px top padding; the preview is capped at 780px. At 600px and below, the story becomes one column, hero spacing becomes 38px top/bottom and 32px gap, prompt controls stack, and the footer stacks. Setup begins with 62px top spacing on desktop and 38px on mobile. Numbered rows use a 68px text inset and 34px bottom margin, changing to 53px and 28px on mobile. Fine vertical rules connect the markers.
 
 ## Elevation & Depth
 
-The surrounding page is flat: white ground, hairline rules and restrained filled controls. Depth belongs to the illustrative room photograph and the light cast around its TV. The photograph is darkened with brightness(.72). Desktop wall-light uses three screen-blended color-mix shadows, at 60%/60%/65% selected color; mobile uses two shorter shadows at 70%. The screen has a radial light at 29% of the same selected color. There are no floating page cards or decorative site glows.
+The surrounding page is flat: white ground, hairline rules and restrained filled controls. Depth belongs to the illustrative room photograph and the light cast around its TV. The photograph is darkened with brightness(.72). Desktop wall-light uses three screen-blended color-mix shadows, at 60%/60%/65% selected color; mobile uses two shorter shadows at 70%. The screen has a radial light at 29% of the same selected color. There are no floating page cards or decorative site glows. Within the AirPlay illustration, the native-style screen-mirroring picker uses an 18px backdrop blur, translucent fill, a light border and a `0 7px 20px #0002` shadow. This glass belongs to the depicted device interface.
 
 The registered color property `--ambilight-color` transitions over .65s ease-out; app scale uses .25s ease-out. Smooth anchor scrolling is enabled. Reduced-motion preference disables transitions and restores automatic scrolling.
 
@@ -162,7 +190,7 @@ Site controls have small radii; source/guide links are more softly rounded. Numb
 
 ### Buttons and source links
 
-Primary links and the copy button share the ink fill, semibold label, small radius and a 44px minimum height. Source and guide links use a light rule border, 42px minimum height and a wash hover; the mobile header link uses a 7px radius and 38px minimum height. Ordinary text links remain underlined with a 4px underline offset and gain a thicker underline on hover.
+The GitHub primary link and copy button share the ink fill, semibold label, small radius and a 44px minimum height. Source and guide links use a light rule border, 42px minimum height and a wash hover; the mobile header link uses a 7px radius and 38px minimum height. The header, hero and full-guide links display an 18px GitHub mark via a currentColor CSS mask backed by the local `site/assets/github.svg`. Ordinary text links remain underlined with a 4px underline offset and gain a thicker underline on hover.
 
 ### Language navigation
 
@@ -170,7 +198,7 @@ Compact TR/EN buttons sit beside the GitHub link. The active language reverses i
 
 ### Numbered setup
 
-Six ordered steps use outlined circular markers, a subtle wash and connecting fine rules. Mobile markers become 34px instead of 42px. Step titles remain prominent over quieter detail copy. Download and full-guide links are actual anchors.
+Six ordered steps use outlined circular markers, a subtle wash and connecting fine rules. Mobile markers become 34px instead of 42px. Step titles remain prominent over quieter detail copy. Repository, APK release and full-guide links are actual anchors. The hero opens GitHub first and offers GitHub Releases for ready APKs; source delivery is through the repository. The setup prompt contains the repository URL and clones it into a permanent local folder, or reuses an existing checkout.
 
 ### Prompt field
 
@@ -178,7 +206,7 @@ The readonly, vertically resizable textarea has a wash ground, line border, 5px 
 
 ### Compatibility disclosure
 
-Native details/summary elements use horizontal rules, semibold labels and plus/minus state indicators. Summary padding is 20px vertically; expanded body copy is 14px and ends with 22px padding. These cover compatibility, optional AirPlay, privacy, recovery and licensing.
+Native details/summary elements use horizontal rules, semibold labels and plus/minus state indicators. Summary padding is 20px vertically; expanded body copy is 14px and ends with 22px padding. Four disclosures cover compatibility, AirPlay setup, privacy and recovery. MIT remains a footer link.
 
 ### Interactive TV preview
 
@@ -188,11 +216,19 @@ The screen overlay occupies left 14.24%, top 14.27%, width 71.65%, height 56.93%
 
 Five real app brands appear: Netflix, YouTube, TOD, beIN CONNECT and HBO Max. Click or keyboard focus updates the title, selected state and room color; left/right arrows move through the buttons without wrapping. Selected tiles scale to 1.035 and expose `aria-pressed`. Five 16cqw tiles have 1.4cqw gaps. Logos are locally sourced assets using contain sizing. HDMI 1 shows 🎮 and PlayStation 1; the antenna label includes 📡. İstanbul is the example weather city.
 
-Clock, date and greeting use `Europe/Istanbul` and localized `Intl.DateTimeFormat`, update every 1000ms, and refresh on language or document-visibility changes. The caption distinguishes the live Türkiye clock from sample weather/device readings and the illustrative room. The feature text explains that the real app opens Philips Ambilight settings and does not directly control the hardware wall light.
+Clock, date and greeting use `Europe/Istanbul` and localized `Intl.DateTimeFormat`, update every 1000ms, and refresh on language or document-visibility changes. The caption says the Türkiye clock is current and the weather is an example. The room remains an illustrative mockup as recorded in asset provenance. Feature text directs the real Ambilight button to the TV’s light settings; the website wall-light effect is a demonstration, not direct hardware control.
 
 ### AirPlay explanation
 
-A prominent section before setup describes the separate, optional receiver and shows the textual path iPhone / Mac → AirPlay receiver → TV. It states the receiver is not bundled and automatic handover needs additional ADB permissions. The guide link follows the selected language; compatibility disclosure repeats the limitations.
+A prominent section before setup explains that the Philips model lacks a built-in receiver. The supplied setup prompt includes receiver installation, explained ADB permissions, automatic handover and end-to-end testing as one flow, without a separate opt-in question. The receiver remains a separate component. The guide link follows the selected language.
+
+### Mac / iPhone mirroring demonstration
+
+The demonstration’s Mac/iPhone tabs use `role=tab`, `aria-selected`, roving tab stops and associated panels. Click or left/right arrows select the source and restart the simulated mirroring. The initial state is Mac with mirroring active. Mac displays an authored Claude Code terminal; iPhone displays twelve stock/example app tiles plus a four-app dock. These are coded illustrations based on current Apple support guides referenced in `site/assets/ASSET_SOURCES.md`, without a claim to an exact OS-version capture.
+
+Each source has a native-style Screen Mirroring picker with a checked “Makallete TV” receiver and a stop action. Start sets `aria-pressed=true`; stop hides the receiver check, stop control and mirrored TV content, showing a waiting label instead. The TV copies only the source content, excluding the picker, so the source control panel is not repeated on the TV. The Mac content retains its 16:10 proportion; iPhone uses 9:19.5 with black side areas on the TV. The live Türkiye clock and calendar day also update within these examples.
+
+The Mac picker occupies the upper right (55% width, 9px corners); the phone picker sits below the status area (6% side insets, 20px corners). Both use translucent light-blue glass with dark labels. Source app tiles, dock, device bezel and terminal stay inside the demonstration and do not redefine the page’s control vocabulary.
 
 ### Accessibility states
 
@@ -203,8 +239,8 @@ Buttons, anchors, textarea and summary use a 2px ink focus outline with a 5px of
 ### Do:
 
 - Do preserve the inherited Manrope, paper, ink and fine-rule vocabulary.
-- Do distinguish the illustrative room and sample weather/device readings from the live Türkiye clock.
-- Do keep setup content readable in document flow and downloads usable without JavaScript.
+- Do distinguish the illustrative room and sample weather/device readings from the live Türkiye clock, and keep Turkish copy concise and natural.
+- Do keep setup content readable in document flow and GitHub/Releases links usable without JavaScript.
 - Do retain keyboard focus, reduced-motion support and the exact author signature “Developed by makallete”.
 
 ### Don’t:
@@ -212,3 +248,9 @@ Buttons, anchors, textarea and summary use a 2px ink focus outline with a 5px of
 - Don’t extend the TV’s saturated palette or glow to the surrounding page.
 - Don’t introduce private household data, implied brand partnerships or unverified performance claims.
 - Don’t replace the inherited visual authority with a new identity.
+
+## GitHub installation flow
+
+Primary hero action: review and install on GitHub. Secondary action: signed APK via GitHub Releases. Setup step 2 sends readers to repository review; the copyable prompt includes the repository URL and obtains source itself. No website source-ZIP link or build step remains. The text prompt fallback remains available when JavaScript is disabled.
+
+The full agent prompt includes AirPlay receiver, permissions and automatic handover in the main installation. Site copy no longer presents that setup as optional. The receiver remains a separate application and its permissions are explained.

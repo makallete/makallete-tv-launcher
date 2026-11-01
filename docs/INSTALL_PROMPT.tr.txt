@@ -1,11 +1,13 @@
-Bu klasördeki Makallete TV Launcher projesini Android TV'me kurmama yardım et.
+Makallete TV Launcher’ı AirPlay desteğiyle birlikte Android TV’me kur.
 
-Önce README.md, docs/KURULUM.md, docs/RELEASING.md ve kaynak kodu oku. Koddan öğrenebileceğin bilgileri tekrar sorma. Komutları sen çalıştır; TV'deki dokunuşları bana net ve numaralı anlat.
+Repo: https://github.com/makallete/makallete-tv-launcher
 
-1. Bilgisayarın araçlarını, TV modelini, Android sürümünü ve ADB bağlantısını salt okunur kontrollerle doğrula. Android 11'den eskiyse dur. Birden fazla cihaz varsa hedefi açıkça seç. Ağ hata ayıklamayı internete açma. TV'deki bağlantı onayını benim vermemi bekle.
-2. Resmi Platform-Tools'u ve gerekiyorsa JDK 17 / Android SDK 34 / build-tools 34.0.0 araçlarını hazırla. Hangi dosyayı indireceğimi, nereye çıkaracağımı ve nerede terminal açacağımı bilmediğimi varsay. Var olan araçları tekrar kurma.
-3. Hazır release APK varsa kaynağını ve SHA-256 değerini kontrol et. Yoksa bu kaynak koddan debug APK derle. Debug ve release imzalarının farklı olduğunu açıkla; çalışan kurulumu imza hatasında otomatik kaldırma. Anahtarları, şifreleri ve özel verileri Git'e veya sohbet çıktısına koyma.
-4. Önce mevcut HOME bileşenini kaydet. APK'yı kur ve uygulamayı aç; kumanda, OK, uzun OK, HDMI ve anteni benimle kontrol et. Sonra varsayılan ana ekranı seçmeme yardım et. Sistem uygulaması kaldırma veya devre dışı bırakma; bu proje debloat gerektirmez.
-5. İstersem Düzenle ekranından selamlama ve şehir ayarla. Şehir/hava isteklerinin Open-Meteo'ya gittiğini açıkla. Gerçek veri gelmiyorsa sahte değer gösterme.
-6. Temel launcher çalışınca AirPlay isteyip istemediğimi sor. İstersem ayrı io.github.jqssun.airplay alıcısını resmi kaynaktan kur, sürümü doğrula, log uyumluluğunun sürüme bağlı olduğunu anlat. READ_LOGS, kullanım erişimi ve overlay izinlerinin ne yaptığını açıklayıp yalnızca bu özellik için ver; Düzenle ekranındaki otomatik geçişi açtır. Yansıtma başlangıcı ve bitişini kontrol et.
-7. Home, uygulamalar, girişler ve yeniden açılışı doğrula. Ekran görüntüsü gerekiyorsa kişisel isim/konumu paylaşma. Bitirince geri alma komutlarını ver, ADB bağlantısını kapat ve TV'de hata ayıklamayı kapatmamı hatırlat. TV'ye erişemiyorsan başarı iddia etme.
+Projeyi bilgisayarımda kalıcı bir klasöre klonla. Repo zaten açıksa onu kullan; mevcut dosyalarımı değiştirmeden önce kontrol et. README.md, docs/KURULUM.md ve kaynak kodu oku. Bilgisayardaki komutları sen çalıştır; TV’de yapmam gerekenleri adım adım anlat.
+
+1. TV modelini, Android sürümünü ve mevcut araçları kontrol et. Android 11’den eskiyse kurulumu durdur. Birden fazla ADB cihazı varsa doğru TV’yi seç. Bağlantı iznini TV’de benim onaylamamı bekle.
+2. Bağlantı için resmi Platform-Tools’u kullan. İmzalı APK varsa GitHub Releases’ten al ve SHA-256 değerini doğrula. Kaynaktan derlemek gerekiyorsa JDK 17, Android SDK 34 ve Build-Tools 34.0.0 hazırla. İmza uyuşmazlığı çıkarsa çalışan uygulamayı kendiliğinden kaldırma.
+3. Mevcut ana ekranı geri getirebilmek için HOME bileşenini kaydet. Launcher’ı kur; kumanda, OK, uzun OK, uygulama açma, HDMI ve anten girişlerini kontrol et. Ardından varsayılan ana ekran olarak seçmeme yardım et. Sistem uygulamalarını kaldırma veya devre dışı bırakma.
+4. Düzenle bölümünden selamlama ve şehir ayarını yapmama yardım et. Hava durumu için şehir koordinatlarının Open-Meteo’ya gönderildiğini açıkla.
+5. AirPlay alıcısı io.github.jqssun.airplay’i resmi kaynağından kur. Zaten yüklüyse çalışan sürümü ve ayarlarını kontrol et. READ_LOGS, kullanım erişimi ve ekran üstüne çizme izinlerinin ne işe yaradığını anlatıp gerekli izinleri ayarla. Alıcıda launch_on_connect’i kapat, launcher’ın Düzenle bölümünden otomatik geçişi aç. AirPlay bu kurulumun parçası; ayrıca isteyip istemediğimi sorma.
+6. Mac veya iPhone’dan ekran yansıtmayı birlikte dene. Yansıtma başlayınca alıcının açıldığını, bitince launcher’a döndüğünü ve TV yeniden açıldığında sistemin çalıştığını kontrol et. Alıcı sürümüyle uyumsuzluk veya erişim sorunu çıkarsa nedenini ve yapılması gerekeni belirt.
+7. Sonunda eski ana ekrana dönme ve uygulamayı kaldırma adımlarını ver. ADB bağlantısını kapat; TV’de hata ayıklamayı kapatmamı hatırlat. Doğrulayamadığın adımları belirt. Kişisel bilgileri, ekran görüntülerini, şifreleri veya imza anahtarlarını Git’e ya da sohbet çıktısına koyma.
