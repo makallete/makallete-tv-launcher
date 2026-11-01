@@ -24,13 +24,9 @@ colors:
   tv-status: "#81c7a9"
   mirror-device: "#242629"
   mirror-target: "#050505"
-  mirror-picker-ink: "#1c2737"
-  mirror-picker-mac: "#dce6eff0"
-  mirror-picker-phone: "#c8d8e6e8"
-  terminal-ground: "#111418"
-  terminal-text: "#e5e6e8"
-  terminal-accent: "#d58d6b"
-  terminal-success: "#85b883"
+  screenshot-ground: "#22211f"
+  action-disabled-text: "#777"
+  action-disabled-ground: "#f7f7f5"
 typography:
   display:
     fontFamily: "Manrope, Arial, sans-serif"
@@ -65,10 +61,6 @@ typography:
     letterSpacing: "-0.035em"
   tv-body:
     fontFamily: "Onest, sans-serif"
-  terminal:
-    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
-    fontSize: "3.1cqw"
-    lineHeight: 1.6
 rounded:
   language: "4px"
   control: "5px"
@@ -76,8 +68,6 @@ rounded:
   source-link: "12px"
   room: "10px"
   mirror-target: "8px"
-  mirror-picker-mac: "9px"
-  mirror-picker-phone: "20px"
   preview-app: ".65cqw"
   step: "50%"
 spacing:
@@ -119,10 +109,14 @@ components:
   mirror-tab-active:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.paper}"
-  mirror-picker-mac:
-    backgroundColor: "{colors.mirror-picker-mac}"
-    textColor: "{colors.mirror-picker-ink}"
-    rounded: "{rounded.mirror-picker-mac}"
+  mirror-action:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.control}"
+    padding: "9px 14px"
+  mirror-action-disabled:
+    backgroundColor: "{colors.action-disabled-ground}"
+    textColor: "{colors.action-disabled-text}"
   preview-app:
     backgroundColor: "{colors.tv-tile}"
     rounded: "{rounded.preview-app}"
@@ -172,13 +166,13 @@ At the mobile breakpoint the display becomes 36px, section headings 24px, introd
 
 ## Layout
 
-The actual outer maximum width is **1160px**, including horizontal padding under border-box sizing. Desktop gutters are 28px, mobile gutters 20px. Header minimum height is 84px (82px mobile). Hero columns use a .7:1.6 ratio, 40px gap, 72px top and 68px bottom padding. The 1536×1024 room plate is 3:2; its HTML screen overlays the photographed television. The story uses 1:1.5 columns and a 55px gap. The dedicated AirPlay explanation repeats the story’s two-column structure, with 48px vertical padding, then 32px and one column on mobile. Its full-width demonstration row uses source / arrow / TV columns (.8fr / 32px / 1.3fr) and 20px gaps. At 600px it stacks, hides the arrow and centers a source up to 290px wide; the iPhone frame is 180px desktop and 170px mobile. Setup, prompt and compatibility sections share an 820px maximum width and remain aligned with the content start.
+The actual outer maximum width is **1160px**, including horizontal padding under border-box sizing. Desktop gutters are 28px, mobile gutters 20px. Header minimum height is 84px (82px mobile). Hero columns use a .7:1.6 ratio, 40px gap, 72px top and 68px bottom padding. The 1536×1024 room plate is 3:2; its HTML screen overlays the photographed television. The story uses 1:1.5 columns and a 55px gap. The dedicated AirPlay explanation repeats the story’s two-column structure, with 48px vertical padding, then 32px and one column on mobile. Its full-width demonstration row uses source / arrow / TV columns (.8fr / 32px / 1.3fr) and 20px gaps. At 600px it stacks, hides the arrow and centers a source up to 290px wide; the official iPhone image is 200px wide on desktop and 180px on mobile, using its original 490:1008 aspect ratio without an added border or shadow. The toolbar wraps, centers on mobile and keeps a 12px mobile gap. Setup, prompt and compatibility sections share an 820px maximum width and remain aligned with the content start.
 
 At 900px and below, the hero becomes one column with a 38px gap and 45px top padding; the preview is capped at 780px. At 600px and below, the story becomes one column, hero spacing becomes 38px top/bottom and 32px gap, prompt controls stack, and the footer stacks. Setup begins with 62px top spacing on desktop and 38px on mobile. Numbered rows use a 68px text inset and 34px bottom margin, changing to 53px and 28px on mobile. Fine vertical rules connect the markers.
 
 ## Elevation & Depth
 
-The surrounding page is flat: white ground, hairline rules and restrained filled controls. Depth belongs to the illustrative room photograph and the light cast around its TV. The photograph is darkened with brightness(.72). Desktop wall-light uses three screen-blended color-mix shadows, at 60%/60%/65% selected color; mobile uses two shorter shadows at 70%. The screen has a radial light at 29% of the same selected color. There are no floating page cards or decorative site glows. Within the AirPlay illustration, the native-style screen-mirroring picker uses an 18px backdrop blur, translucent fill, a light border and a `0 7px 20px #0002` shadow. This glass belongs to the depicted device interface.
+The surrounding page is flat: white ground, hairline rules and restrained filled controls. Depth belongs to the illustrative room photograph and the light cast around its TV. The photograph is darkened with brightness(.72). Desktop wall-light uses three screen-blended color-mix shadows, at 60%/60%/65% selected color; mobile uses two shorter shadows at 70%. The screen has a radial light at 29% of the same selected color. There are no floating page cards or decorative site glows. The AirPlay source screens are publisher-provided screenshots; their internal visual styling is image content, not site tokens. No authored native picker or glass overlay remains.
 
 The registered color property `--ambilight-color` transitions over .65s ease-out; app scale uses .25s ease-out. Smooth anchor scrolling is enabled. Reduced-motion preference disables transitions and restores automatic scrolling.
 
@@ -224,11 +218,13 @@ A prominent section before setup explains that the Philips model lacks a built-i
 
 ### Mac / iPhone mirroring demonstration
 
-The demonstration’s Mac/iPhone tabs use `role=tab`, `aria-selected`, roving tab stops and associated panels. Click or left/right arrows select the source and restart the simulated mirroring. The initial state is Mac with mirroring active. Mac displays an authored Claude Code terminal; iPhone displays twelve stock/example app tiles plus a four-app dock. These are coded illustrations based on current Apple support guides referenced in `site/assets/ASSET_SOURCES.md`, without a claim to an exact OS-version capture.
+The demonstration’s Mac/iPhone tabs use `role=tab`, `aria-selected`, roving tab stops and associated panels. Click or left/right arrows select the source and restart simulated mirroring. The initial state is Mac with mirroring active. A separate site toolbar provides “TV’ye yansıt” and “Yansıtmayı Durdur”; these use the inherited flat control vocabulary rather than imitating native Control Center. Both have 44px minimum height, 5px corners, 12px type and 9px × 14px padding (8px × 12px on mobile). Enabled hover uses the wash and ink border. Disabled controls use muted text, a pale ground and default cursor.
 
-Each source has a native-style Screen Mirroring picker with a checked “Makallete TV” receiver and a stop action. Start sets `aria-pressed=true`; stop hides the receiver check, stop control and mirrored TV content, showing a waiting label instead. The TV copies only the source content, excluding the picker, so the source control panel is not repeated on the TV. The Mac content retains its 16:10 proportion; iPhone uses 9:19.5 with black side areas on the TV. The live Türkiye clock and calendar day also update within these examples.
+Mac uses `site/assets/screens/claude-code-official.webp`, a lossless conversion of Anthropic’s published Claude Code terminal image. It retains native macOS window controls and published content; it is not an authored terminal, evidence of this project’s own build, or a claim to the latest Claude Code version. The source image is 1920×1035; the visible crop uses a 1360:935 box and source positioning of width 141.17647%, height 110.69519%, left −20.58824%, top −5.34759%.
 
-The Mac picker occupies the upper right (55% width, 9px corners); the phone picker sits below the status area (6% side insets, 20px corners). Both use translucent light-blue glass with dark labels. Source app tiles, dock, device bezel and terminal stay inside the demonstration and do not redefine the page’s control vocabulary.
+iPhone uses `site/assets/screens/ios-home-official.webp`, the official 490×1008 default Home Screen asset from Apple’s iOS 27 guide. Original 9:41 time and sample widgets remain unchanged; no home icons, clock or widgets are reconstructed or updated in HTML. The source presents the complete device image. On the TV, CSS crops its exterior using width 110.11236%, height 104.34783%, left −4.94382%, top −2.07039%. The main launcher preview alone continues to show live Türkiye time.
+
+The toolbar start button exposes `aria-pressed` and is disabled while mirroring is active; stop is disabled while inactive. Stopping hides the TV content and shows a waiting label. Starting restores the selected source. The TV uses the same screenshot content as the source with the appropriate crop, not a generated substitute or additional native panel. The Mac TV container is 16:10; iPhone uses 9:19.5 with black side areas. Publisher source links appear below the preview as 11px credits. Provenance and lossless-conversion verification are recorded in `site/assets/ASSET_SOURCES.md`; these screenshots retain publisher rights outside the MIT code license.
 
 ### Accessibility states
 

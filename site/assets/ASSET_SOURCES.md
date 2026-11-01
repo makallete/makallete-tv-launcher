@@ -15,11 +15,11 @@ Create a photorealistic front-on interior product mockup using this exact Philip
 
 ## Screen-mirroring demo
 
-The Mac/iPhone interfaces are coded illustrative screens, based on Apple's current support guides accessed on 2026-11-01. They show Control Center / Screen Mirroring, a selected example receiver named Makallete TV, and the selected content mirrored to the television: a Claude Code terminal on Mac and an app-filled home screen on iPhone. The content is illustrative; no private screenshots or wallpaper/photo-sharing examples are used.
+Both displayed screens are publisher-provided raster assets, not recreated HTML interfaces or generated images. Their lossless WebP conversions were verified pixel-for-pixel against the downloaded PNGs. CSS crops the surrounding image/device border when placing the same screen on the TV; it does not redraw text, icons or application content. Source links are also shown under the preview.
 
-- iPhone flow and current support screenshots: https://support.apple.com/tr-tr/102661 . The current article uses iOS 26 screenshots even though iOS 27 is released; the coded illustration follows the guide's mirroring panel rather than claiming a pixel-exact iOS 27 capture.
-- Mac Control Center: https://support.apple.com/tr-tr/guide/mac-help/mchl50f94f8f/mac .
-- Mac AirPlay: https://support.apple.com/tr-tr/guide/mac-help/mchld7e543a0/mac .
-- Current OS release reference: https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/ .
+- `screens/claude-code-official.webp`: Anthropic's official Claude Code terminal UX image from [Enabling Claude Code to work more autonomously](https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously), published 2025-09-29. [Original PNG](https://www-cdn.anthropic.com/images/4zrzovbb/website/3613f360926fae004521197488623465eb0cd751-1920x1035.png). It shows native macOS window controls and Claude Code v2.0.0; it is not presented as the latest Claude Code version or as this project's own run. Public demo names/text belong to the original published asset.
+- `screens/ios-home-official.webp`: Apple's official default Home Screen screenshot from [Open apps on iPhone — iOS 27 User Guide](https://support.apple.com/guide/iphone/open-apps-iphca3d8b4e3/27/ios/27). [Original PNG](https://ipcdn-web.apple.com/assets/v2/web/75442b87-2342-4d3f-94e6-375015c51cf7). The original 9:41 time and sample widgets remain untouched. The launcher's main preview clock remains live Türkiye time.
+
+These third-party screenshots retain their publishers' rights and are outside the project's MIT code license. No private device screenshot or private household data is used.
 
 GitHub mark: `github.svg`, reused from the same author’s previous site at https://kindle-daybook-makallete.netlify.app/assets/github.svg . GitHub branding remains its owner’s trademark.

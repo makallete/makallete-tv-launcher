@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T11:50:59.197880+00:00",
+  "generatedAt": "2026-11-01T22:27:43.678339+00:00",
   "title": "Design System: Makallete TV Launcher promotional site",
   "extensions": {
     "colorMeta": {
@@ -37,11 +37,6 @@
         "name": "wall-light-mobile",
         "value": "-12px -10px 22px 8px color-mix(in srgb,var(--ambilight-color) 70%,transparent),12px -10px 22px 8px color-mix(in srgb,var(--ambilight-color) 70%,transparent)",
         "purpose": "Shorter room light at 600px and below."
-      },
-      {
-        "name": "screen-mirroring-picker",
-        "value": "0 7px 20px #0002",
-        "purpose": "Native-style source-device picker only; translucent fill and backdrop-filter blur(18px). No page-card elevation."
       }
     ],
     "motion": [
@@ -137,12 +132,12 @@
       "css": ".ds-mirror-tabs{display:flex;gap:6px;margin-bottom:20px}.ds-mirror-tabs button{font:600 14px/1.7 Manrope,Arial,sans-serif;border:1px solid var(--line,#d7d7d4);border-radius:5px;background:#fff;color:var(--ink,#171717);min-height:44px;padding:9px 22px;cursor:pointer}.ds-mirror-tabs button[aria-selected=true]{background:var(--ink,#171717);border-color:var(--ink,#171717);color:#fff}.ds-mirror-tabs button:hover{border-color:var(--ink,#171717)}.ds-mirror-tabs button:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}"
     },
     {
-      "name": "Screen Mirroring picker",
+      "name": "Mirroring start/stop toolbar",
       "kind": "custom",
-      "refersTo": "mirror-picker-mac",
-      "description": "Native-style selected receiver panel in the source device; omitted from mirrored TV content.",
-      "html": "<div class=\"ds-picker-context\"><div class=\"ds-picker\"><div class=\"ds-picker-heading\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"13\" height=\"11\" rx=\"2\"/><rect x=\"8\" y=\"9\" width=\"13\" height=\"11\" rx=\"2\"/></svg><strong>Ekran Yansıtma</strong></div><button class=\"ds-picker-device\" aria-pressed=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"13\" height=\"11\" rx=\"2\"/><rect x=\"8\" y=\"9\" width=\"13\" height=\"11\" rx=\"2\"/></svg><span>Makallete TV</span><svg class=\"ds-mirror-check\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"m4 10 4 4 8-8\"/></svg></button><button class=\"ds-picker-stop\">Yansıtmayı Durdur</button></div></div>",
-      "css": ".ds-picker-context{container-type:inline-size;max-width:400px;padding:12px;background:#111418}.ds-picker{font-family:Manrope,Arial,sans-serif;border:1px solid #ffffffa6;border-radius:9px;background:#dce6eff0;color:#1c2737;box-shadow:0 7px 20px #0002;backdrop-filter:blur(18px);overflow:hidden}.ds-picker-heading{display:flex;align-items:center;gap:2cqw;padding:3cqw}.ds-picker-heading>svg{width:6cqw;height:6cqw;fill:none;stroke:currentColor;stroke-width:1.5}.ds-picker-heading strong{font-size:3.5cqw;line-height:1.3}.ds-picker-device{display:flex;width:100%;align-items:center;gap:2cqw;border:0;border-top:1px solid #ffffff80;background:transparent;color:inherit;font:3cqw/1.4 Manrope,Arial,sans-serif;text-align:left;padding:3cqw;cursor:pointer}.ds-picker-device>svg{width:5.5cqw;height:5.5cqw;fill:none;stroke:currentColor;stroke-width:1.5}.ds-picker-device .ds-mirror-check{margin-left:auto;width:4cqw;height:4cqw;stroke-width:2}.ds-picker-stop{display:block;width:100%;background:transparent;color:inherit;border:0;border-top:1px solid #ffffff80;font:2.8cqw/1.7 Manrope,Arial,sans-serif;padding:3cqw;text-align:center;cursor:pointer}.ds-picker-device:hover,.ds-picker-stop:hover{background:#ffffff40}.ds-picker button:focus-visible{outline:2px solid #171717;outline-offset:-3px}"
+      "refersTo": "mirror-action",
+      "description": "Site-level simulation controls, separate from the official screenshot content. Active state disables start; inactive state disables stop and shows the TV waiting label.",
+      "html": "<div class=\"ds-mirror-actions\"><button aria-pressed=\"true\" disabled>TV’ye yansıt</button><button>Yansıtmayı Durdur</button></div>",
+      "css": ".ds-mirror-actions{display:flex;gap:8px}.ds-mirror-actions button{font:12px/1.7 Manrope,Arial,sans-serif;border:1px solid var(--line,#d7d7d4);border-radius:5px;background:#fff;color:var(--ink,#171717);padding:9px 14px;min-height:44px;cursor:pointer}.ds-mirror-actions button:hover:enabled{border-color:var(--ink,#171717);background:var(--wash,#f5f5f2)}.ds-mirror-actions button:disabled{color:#777;background:#f7f7f5;cursor:default}.ds-mirror-actions button:focus-visible{outline:2px solid var(--ink,#171717);outline-offset:5px}@media(max-width:600px){.ds-mirror-actions button{padding:8px 12px}}"
     }
   ],
   "narrative": {

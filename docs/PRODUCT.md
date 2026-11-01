@@ -25,3 +25,5 @@ The website routes source review and setup to GitHub, and signed APK downloads t
 The installation prompt includes AirPlay receiver installation, permission setup, automatic handover and end-to-end mirroring checks by default; it does not ask users to opt in separately. APK defaults remain unchanged until setup enables the watcher.
 
 The published copy uses concise, natural Turkish and keeps licensing as a footer link. The AirPlay demonstration uses Control Center / Screen Mirroring with a selected Makallete TV receiver; iPhone mirrors a home screen with app icons and Mac mirrors a Claude Code terminal. GitHub marks identify repository/release links. No direct website source ZIP, photo-sharing or wallpaper-only example is offered.
+
+The Mac/iPhone mirroring preview now uses actual publisher-provided screenshots: Anthropic’s Claude Code terminal UX and Apple’s iOS 27 User Guide Home Screen. Hand-drawn terminal, app icons and system picker panels have been removed. Screens are unaltered lossless assets; only CSS placement/cropping is used inside device/TV frames. Source links remain visible.

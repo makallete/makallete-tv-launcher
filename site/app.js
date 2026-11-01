@@ -48,22 +48,14 @@ const english = {
   "airplayStoryBody": "The Philips 65PUS7906/62 has no built-in AirPlay support. This setup adds a receiver so you can mirror your Mac or iPhone screen wirelessly.",
   "airplayStoryNote": "The setup prompt installs the receiver and prepares its permissions. Mirroring opens the receiver; stopping returns to the launcher.",
   "airplayGuide": "See AirPlay setup",
-  "mirrorCaption": "Open Screen Mirroring in Control Center and choose Makallete TV.",
+  "mirrorCaption": "Open Screen Mirroring in Control Center and select your TV.",
   "mirrorStatus": "Screen Mirroring · Makallete TV",
   "licenseLink": "MIT License",
   "weatherCredit": "Weather: Open-Meteo · CC BY 4.0",
-  "shareScreenMirroring": "Screen Mirroring",
   "shareStop": "Stop Mirroring",
   "shareWaiting": "Waiting for a connection",
-  "terminalRequest": "Check the launcher and AirPlay setup.",
-  "appCalendar": "Calendar",
-  "appPhotos": "Photos",
-  "appCamera": "Camera",
-  "appMaps": "Maps",
-  "appSettings": "Settings",
-  "appNotes": "Notes",
-  "appFiles": "Files",
-  "appCalendarShort": "SUN"
+  "shareStart": "Mirror to TV",
+  "screenSources": "Screenshots:"
 };
 const prompts = {"tr": "Makallete TV Launcher’ı AirPlay desteğiyle birlikte Android TV’me kur.\n\nRepo: https://github.com/makallete/makallete-tv-launcher\n\nProjeyi bilgisayarımda kalıcı bir klasöre klonla. Repo zaten açıksa onu kullan; mevcut dosyalarımı değiştirmeden önce kontrol et. README.md, docs/KURULUM.md ve kaynak kodu oku. Bilgisayardaki komutları sen çalıştır; TV’de yapmam gerekenleri adım adım anlat.\n\n1. TV modelini, Android sürümünü ve mevcut araçları kontrol et. Android 11’den eskiyse kurulumu durdur. Birden fazla ADB cihazı varsa doğru TV’yi seç. Bağlantı iznini TV’de benim onaylamamı bekle.\n2. Bağlantı için resmi Platform-Tools’u kullan. İmzalı APK varsa GitHub Releases’ten al ve SHA-256 değerini doğrula. Kaynaktan derlemek gerekiyorsa JDK 17, Android SDK 34 ve Build-Tools 34.0.0 hazırla. İmza uyuşmazlığı çıkarsa çalışan uygulamayı kendiliğinden kaldırma.\n3. Mevcut ana ekranı geri getirebilmek için HOME bileşenini kaydet. Launcher’ı kur; kumanda, OK, uzun OK, uygulama açma, HDMI ve anten girişlerini kontrol et. Ardından varsayılan ana ekran olarak seçmeme yardım et. Sistem uygulamalarını kaldırma veya devre dışı bırakma.\n4. Düzenle bölümünden selamlama ve şehir ayarını yapmama yardım et. Hava durumu için şehir koordinatlarının Open-Meteo’ya gönderildiğini açıkla.\n5. AirPlay alıcısı io.github.jqssun.airplay’i resmi kaynağından kur. Zaten yüklüyse çalışan sürümü ve ayarlarını kontrol et. READ_LOGS, kullanım erişimi ve ekran üstüne çizme izinlerinin ne işe yaradığını anlatıp gerekli izinleri ayarla. Alıcıda launch_on_connect’i kapat, launcher’ın Düzenle bölümünden otomatik geçişi aç. AirPlay bu kurulumun parçası; ayrıca isteyip istemediğimi sorma.\n6. Mac veya iPhone’dan ekran yansıtmayı birlikte dene. Yansıtma başlayınca alıcının açıldığını, bitince launcher’a döndüğünü ve TV yeniden açıldığında sistemin çalıştığını kontrol et. Alıcı sürümüyle uyumsuzluk veya erişim sorunu çıkarsa nedenini ve yapılması gerekeni belirt.\n7. Sonunda eski ana ekrana dönme ve uygulamayı kaldırma adımlarını ver. ADB bağlantısını kapat; TV’de hata ayıklamayı kapatmamı hatırlat. Doğrulayamadığın adımları belirt. Kişisel bilgileri, ekran görüntülerini, şifreleri veya imza anahtarlarını Git’e ya da sohbet çıktısına koyma.\n", "en": "Install Makallete TV Launcher and AirPlay support on my Android TV.\n\nRepository: https://github.com/makallete/makallete-tv-launcher\n\nClone the project into a permanent folder on my computer. If the repository is already open, use it and check before changing existing files. Read README.en.md, docs/SETUP.md and the source. Run computer commands yourself and guide me through the TV actions step by step.\n\n1. Check the TV model, Android version and existing tools. Stop below Android 11. Select the correct TV if several ADB devices exist. Wait for me to authorize the connection on the TV.\n2. Use official Platform-Tools. Get the signed APK from GitHub Releases when available and verify its SHA-256. If building from source is necessary, prepare JDK 17, Android SDK 34 and Build-Tools 34.0.0. Do not automatically remove a working installation after a signature mismatch.\n3. Record the current HOME component for recovery. Install the launcher and check remote navigation, OK, long OK, app launch, HDMI and tuner inputs. Then help me select it as the default home. Do not remove or disable system apps.\n4. Help me set the greeting and city in Düzenle (Edit). Explain that weather requests send city coordinates to Open-Meteo.\n5. Install io.github.jqssun.airplay from its official source, or check its working version and settings if it is already installed. Explain log, usage and overlay access, then grant the permissions needed for handover. Disable launch_on_connect in the receiver and enable automatic handover in the launcher’s Edit screen. AirPlay is part of this installation; do not ask separately whether I want it.\n6. Test screen mirroring from a Mac or iPhone with me. Check that mirroring opens the receiver, stopping returns to the launcher, and the setup works after restarting the TV. Explain any receiver compatibility or access problem and the next action needed.\n7. Provide steps to restore the old home and uninstall the app. Disconnect ADB and remind me to disable TV debugging. State which checks you could not complete. Keep personal information, screenshots, passwords and signing keys out of Git and chat output.\n"};
 const originals = new Map([...document.querySelectorAll('[data-i18n]')].map(node => [node.dataset.i18n, node.innerHTML]));
@@ -71,6 +63,8 @@ let language = 'tr';
 function setLanguage(value) {
   language = value === 'en' ? 'en' : 'tr';
   document.documentElement.lang = language;
+  document.querySelectorAll('.claude-official-shot').forEach(image => { image.alt = language === 'tr' ? 'Anthropic’in yayımladığı Claude Code terminal görüntüsü' : 'Claude Code terminal screenshot published by Anthropic'; });
+  document.querySelectorAll('.ios-official-shot').forEach(image => { image.alt = language === 'tr' ? 'Apple’ın iOS 27 kılavuzundaki iPhone ana ekranı' : 'iPhone Home Screen from Apple’s iOS 27 User Guide'; });
   document.querySelectorAll('[data-i18n]').forEach(node => { node.innerHTML = language === 'en' ? english[node.dataset.i18n] : originals.get(node.dataset.i18n); });
   document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === language)));
   document.getElementById('setup-prompt').value = prompts[language];
@@ -151,7 +145,8 @@ function renderMirroring() {
   mac.hidden = mirroredDevice !== 'mac'; phone.hidden = mirroredDevice !== 'iphone';
   const source = mirroredDevice === 'mac' ? mac : phone;
   document.getElementById('mirror-tv-content').innerHTML = source.querySelector('.share-content').outerHTML;
-  document.querySelectorAll('[data-start-mirroring]').forEach(button => button.setAttribute('aria-pressed', String(mirroringActive)));
+  document.querySelectorAll('[data-start-mirroring]').forEach(button => { button.setAttribute('aria-pressed', String(mirroringActive)); button.disabled = mirroringActive; });
+  document.querySelectorAll('[data-stop-mirroring]').forEach(button => { button.disabled = !mirroringActive; });
 }
 mirrorTabs.forEach((tab, index) => {
   tab.addEventListener('click', () => { mirroredDevice = tab.dataset.mirrorDevice; mirroringActive = true; renderMirroring(); });
