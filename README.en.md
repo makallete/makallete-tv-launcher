@@ -38,7 +38,7 @@ Requires Android 11 / API 30 or newer. HDMI, tuner and Ambilight support depend 
 
 ## Website and privacy
 
-The static bilingual site is in `site/`, with Netlify settings in `netlify.toml`. Run `python3 scripts/package-source.py` to generate the source download ZIP. Preview locally with `python3 -m http.server 8080 --directory site`. All preview names, apps, location and measurements are fictional; the preview is not a device capture. See [SECURITY.md](SECURITY.md) for network and permission details.
+The static bilingual site is in `site/`, with Netlify settings in `netlify.toml`. Run `python3 scripts/package-source.py` to generate the source download ZIP. Preview locally with `python3 -m http.server 8080 --directory site`. The preview uses real app brands and İstanbul as the example city. Time and date follow live Türkiye time; weather and device readings are illustrative. The room image was generated from a Philips 65PUS7906/62 reference and is not a device capture. See [SECURITY.md](SECURITY.md) for network and permission details.
 
 ## License
 

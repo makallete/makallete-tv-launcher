@@ -38,7 +38,7 @@ Android 11 (API 30) altı desteklenmez. HDMI, anten ve Ambilight üreticiye bağ
 
 ## Site
 
-`site/` yalnızca statik dosyalardan oluşur; `netlify.toml` yayın klasörünü tanımlar; `python3 scripts/package-source.py` indirilebilir kaynak ZIP’ini üretir. Yerelde `python3 -m http.server 8080 --directory site` çalıştırıp `http://localhost:8080` açın. Önizlemedeki uygulamalar, şehir, saat ve ölçümler kurgudur; gerçek TV ekran görüntüsü değildir.
+`site/` yalnızca statik dosyalardan oluşur; `netlify.toml` yayın klasörünü tanımlar; `python3 scripts/package-source.py` indirilebilir kaynak ZIP’ini üretir. Yerelde `python3 -m http.server 8080 --directory site` çalıştırıp `http://localhost:8080` açın. Önizleme gerçek uygulama markalarını ve İstanbul örnek şehrini kullanır. Saat ve tarih canlı Türkiye saatidir; hava ve cihaz ölçümleri örnektir. Philips 65PUS7906/62 referanslı oda görseli AI ile hazırlanmıştır; gerçek TV ekran görüntüsü değildir.
 
 ## Lisans
 

@@ -1,18 +1,209 @@
 <!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Android TV için sade, reklamsız bir ana ekran. Makallete TV Launcher'ı tanı, kurulum adımlarını izle."><meta name="theme-color" content="#ffffff"><meta property="og:title" content="Makallete TV Launcher"><meta property="og:description" content="A simple, ad-free home screen for Android TV. Open source, with step-by-step setup."><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"><title>Makallete TV Launcher — Kurulum / Setup</title><script src="app.js" defer></script></head>
-<body><a class="skip" href="#main" data-i18n="skip">İçeriğe geç</a>
-<header><a class="wordmark" href="#"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8m-4-4v4"/></svg><span>Makallete TV Launcher</span></a><nav aria-label="Language and source"><a class="github-link" href="https://github.com/makallete/makallete-tv-launcher">GitHub</a><div class="languages"><button type="button" data-lang="tr" aria-pressed="true" aria-label="Türkçe">TR</button><button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button></div></nav></header>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Android TV için sade, reklamsız bir ana ekran. Makallete TV Launcher'ı tanı, kurulum adımlarını izle.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Makallete TV Launcher">
+<meta property="og:description" content="A simple, ad-free home screen for Android TV. Open source, with step-by-step setup.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<title>Makallete TV Launcher — Kurulum / Setup</title>
+<script src="app.js" defer>
+</script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">İçeriğe geç</a>
+<header>
+<a class="wordmark" href="#">
+<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+<rect x="2" y="4" width="20" height="14" rx="2"/>
+<path d="M8 22h8m-4-4v4"/>
+</svg>
+<span>Makallete TV Launcher</span>
+</a>
+<nav aria-label="Language and source">
+<a class="github-link" href="https://github.com/makallete/makallete-tv-launcher">GitHub</a>
+<div class="languages">
+<button type="button" data-lang="tr" aria-pressed="true" aria-label="Türkçe">TR</button>
+<button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+</div>
+</nav>
+</header>
 <main id="main">
-<section class="intro"><div class="intro-copy"><h1 data-i18n="title">TV’ni aç.<br> Keyfine bak.</h1><p data-i18n="intro">Uygulamaların, girişlerin ve ihtiyacın olan birkaç şey. Android TV için sade, reklamsız bir ana ekran.</p><div class="actions"><a class="primary" href="#setup" data-i18n="start">Kuruluma başla</a><a href="makallete-tv-launcher-source.zip" download data-i18n="source">Kaynak kodu indir ↓</a></div><p class="support" data-i18n="support">Android 11 ve üzeri · Açık kaynak · Alpha</p></div>
-<figure class="preview"><div class="tv-shell"><div class="tv-screen" id="tv-screen"><div class="tv-top"><div><strong>20:42</strong><span data-i18n="demoDate">Paz 1 Kas</span><span>19° <span data-i18n="demoCity">Örnek Şehir</span></span></div><div class="tv-chips"><span>Ambilight</span><span>AirPlay <i></i></span><span data-i18n="demoSpeed">Hız testi</span><span>%54</span></div></div><div class="tv-hero"><p data-i18n="greeting">İyi akşamlar</p><h2 id="demo-title">Orbit</h2></div><div class="tv-apps"><p data-i18n="apps">Uygulamalar <span>4</span></p><div class="app-row" role="group" aria-label="Fictional app preview"><button class="demo-app orbit selected" type="button" data-app="Orbit" aria-pressed="true"><span class="orbit-symbol" aria-hidden="true"></span><strong>orbit</strong></button><button class="demo-app frame" type="button" data-app="Frame" aria-pressed="false"><span class="frame-symbol" aria-hidden="true"></span><strong>frame</strong></button><button class="demo-app wave" type="button" data-app="Wave" aria-pressed="false"><span class="wave-symbol" aria-hidden="true"></span><strong>wave</strong></button><button class="demo-app browser" type="button" data-app="Browser" aria-label="Browser" aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="10" ry="22"/><path d="M10 32h44M15 19h34M15 45h34"/></svg></button></div></div><div class="tv-inputs"><p data-i18n="inputs">Girişler</p><div><span>HDMI 1 <i></i></span><span>HDMI 2</span><span>HDMI 3</span><span>HDMI 4</span><span data-i18n="antenna">Anten</span></div></div></div><div class="tv-brand">makallete</div></div><figcaption data-i18n="caption">Bir uygulama seç, ışığın değişmesini gör. Bu etkileşimli önizlemedeki tüm uygulamalar ve veriler kurgudur.</figcaption></figure></section>
-<section class="feature-story" aria-label="Features"><h2 data-i18n="featureTitle">Ana ekran biraz nefes alsın.</h2><div><p data-i18n="featureBody">Kurulu TV uygulamaların afişleriyle kendiliğinden gelir. Kumandada seçtiğin uygulamanın rengi arka plana yayılır. HDMI ve anten girişleri hemen aşağıdadır.</p><p data-i18n="featureMore">İstersen hava durumunu ve selamlamanı ekle. Destekleyen Philips TV’lerde Ambilight panelini aç; ayrı bir alıcıyla AirPlay yansıtmasını kullan.</p></div></section>
-<section id="setup" class="setup"><h2 data-i18n="setupTitle">Adım adım, TV’ne.</h2><p class="section-intro" data-i18n="setupIntro">Bilgisayarın ve TV’n aynı yerel ağda olsun. Kaynak dosyaları bilgisayarda tutacağız; TV’ye yalnızca APK kurulacak.</p><ol>
-<li><h3 data-i18n="step1">TV’nin modelini ve Android sürümünü kontrol et.</h3><p data-i18n="body1">Ayarlar → Sistem / Cihaz tercihleri → Hakkında. Android 11 veya üzeri gerekiyor. Özgün uygulama Philips 65PUS7906/62’de kullanıldı; diğer modeller henüz doğrulanmadı.</p></li>
-<li><h3 data-i18n="step2">Projeyi indir, bilgisayarında bir klasöre aç.</h3><p data-i18n="body2">Kaynak ZIP’i Masaüstü’ndeki tv-kurulum klasörüne çıkar. README.md ve gradlew dosyalarının bulunduğu proje kökünü Codex’e veya Claude Code’a aç. Bütün klasörü TV’ye kopyalama.</p><a class="download" href="makallete-tv-launcher-source.zip" download data-i18n="download">Proje dosyalarını indir ↓</a></li>
-<li><h3 data-i18n="step3">Bağlantı ve derleme araçlarını hazırla.</h3><p data-i18n="body3">Google Platform-Tools ZIP’ini tv-kurulum içine aç. İçindeki platform-tools klasöründe adb bulunmalı. Kaynaktan derlemek için Android Studio, JDK 17 ve Android SDK 34 gerekiyor. Aşağıdaki prompt bu adımlarda sana yol gösterecek.</p><a class="download" href="https://developer.android.com/tools/releases/platform-tools" data-i18n="tools">Google Platform-Tools</a></li>
-<li><h3 data-i18n="step4">TV’de hata ayıklamayı aç ve bağlantıyı onayla.</h3><p data-i18n="body4">Hakkında → Derleme satırına yedi kez bas. Geliştirici seçeneklerinden ağ / USB hata ayıklamayı aç. TV’nin IP adresiyle ADB bağlantısı kurulunca ekrandaki bilgisayar iznini onayla. Menü ve bağlantı yöntemi modele göre değişebilir.</p></li>
-<li><h3 data-i18n="step5">Prompt’u gönder, APK’yı kur ve önce dene.</h3><p data-i18n="body5">Codex veya Claude Code kaynak koddan APK derleyebilir; varsa imzalı release’i kullanabilir. Kumandayla gezinmeyi, uygulamaları ve girişleri dene. Çalıştığını gördükten sonra Home tuşunda Makallete TV Launcher’ı seç. Mevcut ana ekranını kaldırma.</p><a class="download" href="https://github.com/makallete/makallete-tv-launcher/releases" data-i18n="releases">APK sürümleri ve yayın notları</a></li>
-<li><h3 data-i18n="step6">Kendi ana ekranını tamamla.</h3><p data-i18n="body6">Düzenle düğmesinden istersen adını ve şehrini ekle. AirPlay ayrı bir alıcı ve ek izinlerle kuruluyor; temel launcher için zorunlu değil. İşin bitince ADB’yi ayır ve hata ayıklamayı kapat.</p></li></ol><p class="guide-link"><a class="github-link" id="guide" href="https://github.com/makallete/makallete-tv-launcher/blob/main/docs/KURULUM.md" data-i18n="guide">Komutları ve geri alma adımlarını aç</a></p></section>
-<section class="prompt-section"><h2 data-i18n="promptTitle">Kurulum için hazır prompt</h2><p data-i18n="promptBody">İndirdiğin proje klasörünü Codex’e veya Claude Code’a aç. Sonra bu prompt’u gönder; bilgisayardaki işleri yapsın, TV’deki adımları sana anlatsın.</p><div class="prompt-controls"><label for="setup-prompt" data-i18n="promptLabel">Codex / Claude Code’a gönder</label><button type="button" class="primary" id="copy" data-i18n="copy">Prompt’u kopyala</button></div><textarea id="setup-prompt" readonly rows="11" spellcheck="false"></textarea><p id="copy-status" role="status" aria-live="polite"></p><noscript><p>JavaScript kapalı. / JavaScript is disabled. <a href="install-prompt.tr.txt">Türkçe prompt</a> · <a href="install-prompt.en.txt">English prompt</a></p></noscript></section>
-<section class="details-section"><h2 data-i18n="beforeTitle">Kurulmadan önce bil.</h2><details><summary data-i18n="compatTitle">TV’mle çalışır mı?</summary><p data-i18n="compatBody">Android 11 ve üzeri gerekiyor. İlk cihaz Philips 65PUS7906/62 idi; bu paylaşım sürümünün farklı TV’lerde çalışması doğrulanmadı. HDMI, anten, varsayılan ana ekran seçimi ve Ambilight üreticiye bağlı. Uygulama arayüzü şu an Türkçe; bu site ve rehberler iki dilli.</p></details><details><summary data-i18n="airTitle">AirPlay nasıl çalışıyor?</summary><p data-i18n="airBody">Alıcı launcher’a dahil değil. io.github.jqssun.airplay ayrıca kuruluyor. Otomatik geçiş için ADB ile kayıt okuma, kullanım erişimi ve ekran üstüne çizme izinleri gerekiyor. Bekçi alıcının log satırlarını izlediği için yeni alıcı sürümlerinde bozulabilir. İstemiyorsan bu özelliği kapalı bırak.</p></details><details><summary data-i18n="privacyTitle">Hangi bilgiler paylaşılır?</summary><p data-i18n="privacyBody">Selamlama ve şehir ayarı yalnızca TV’de saklanır. Şehir araması ve hava koordinatları Open-Meteo’ya gider. Hız testi elle başlatılır, Cloudflare’a bağlanır ve yaklaşık 25 MB indirebilir. Geliştiriciye veri gönderen bir sunucu veya analiz aracı yok. Site önizlemesi gerçek kişisel veri kullanmaz.</p></details><details><summary data-i18n="restoreTitle">Eski ana ekranıma dönebilir miyim?</summary><p data-i18n="restoreBody">Evet. Kurulumda eski Home bileşenini kaydet ve sistem launcher’ını koru. Varsayılan uygulamalar menüsünden ya da rehberdeki ADB komutuyla geri dönebilirsin. Launcher’ı kaldırmak yerel ayarlarını siler. Farklı imzalı APK’lar birbirinin üstüne kurulamaz; çalışan kurulumu otomatik kaldırma.</p></details><details><summary data-i18n="licenseTitle">Açık kaynak, kendi TV’ne göre değiştir.</summary><p data-i18n="licenseBody">Launcher ve site için MIT lisansı önerildi ve pakete eklendi. Fontların OFL lisansları korunuyor. Ayrı AirPlay alıcısının kendi GPL-3.0 lisansı var. Kodda uygulama sırasını ve gizlenen sistem paketlerini düzenleyebilirsin; bunların henüz ayar ekranı yok.</p></details></section>
-</main><footer><span>Developed by makallete</span><a href="https://github.com/makallete/makallete-tv-launcher/blob/main/LICENSE">MIT License</a><a href="https://open-meteo.com/">Weather data by Open-Meteo · CC BY 4.0</a></footer></body></html>
+<section class="intro">
+<div class="intro-copy">
+<h1 data-i18n="title">TV’ne kendi<br> özel launcher’ını kur.</h1>
+<p data-i18n="intro">Netflix’in, YouTube’un, oyun konsolun. Hepsi sana ait, sade bir ana ekranda. Android TV’ni reklamlardan arındır; kumandanı eline al, keyfine bak.</p>
+<div class="actions">
+<a class="primary" href="#setup" data-i18n="start">Kuruluma başla</a>
+<a href="makallete-tv-launcher-source.zip" download data-i18n="source">Kaynak kodu indir ↓</a>
+</div>
+<p class="support" data-i18n="support">Android 11 ve üzeri · Açık kaynak · Alpha</p>
+</div>
+<figure class="preview">
+<div class="room-scene" id="room-scene" data-tone="netflix">
+<img class="room-photo" src="assets/philips-room.webp" width="1536" height="1024" alt="" fetchpriority="high">
+<div class="room-ambilight" aria-hidden="true">
+</div>
+<div class="tv-shell">
+<div class="tv-screen" id="tv-screen">
+<div class="tv-top">
+<div>
+<time id="turkey-clock" aria-label="Türkiye saati">--:--</time>
+<span id="turkey-date">—</span>
+<span>19° <span>İstanbul</span>
+</span>
+</div>
+<div class="tv-chips">
+<span>Ambilight</span>
+<span>AirPlay <i>
+</i>
+</span>
+<span data-i18n="demoSpeed">Hız testi</span>
+<span>%54</span>
+</div>
+</div>
+<div class="tv-hero">
+<p id="demo-greeting">Merhaba</p>
+<h2 id="demo-title">Netflix</h2>
+</div>
+<div class="tv-apps">
+<p data-i18n="apps">Uygulamalar <span>5</span>
+</p>
+<div class="app-row" role="group" aria-label="TV uygulamaları">
+<button class="demo-app netflix selected" type="button" data-app="Netflix" data-tone="netflix" aria-label="Netflix" aria-pressed="true">
+<img src="assets/brands/netflix.svg" alt="" draggable="false">
+</button>
+<button class="demo-app youtube" type="button" data-app="YouTube" data-tone="youtube" aria-label="YouTube" aria-pressed="false">
+<img src="assets/brands/youtube.svg" alt="" draggable="false">
+</button>
+<button class="demo-app tod" type="button" data-app="TOD" data-tone="tod" aria-label="TOD" aria-pressed="false">
+<img src="assets/brands/tod.webp" alt="" draggable="false">
+</button>
+<button class="demo-app bein" type="button" data-app="beIN CONNECT" data-tone="bein" aria-label="beIN CONNECT" aria-pressed="false">
+<img src="assets/brands/bein-connect.png?v=2" alt="" draggable="false">
+</button>
+<button class="demo-app hbo" type="button" data-app="HBO Max" data-tone="hbo" aria-label="HBO Max" aria-pressed="false">
+<img src="assets/brands/hbo-max.svg?v=2" alt="" draggable="false">
+</button>
+</div>
+</div>
+<div class="tv-inputs">
+<p data-i18n="inputs">Girişler</p>
+<div>
+<span>🎮 HDMI 1 <b>· PlayStation 1</b> <i>
+</i>
+</span>
+<span>HDMI 2</span>
+<span>HDMI 3</span>
+<span>HDMI 4</span>
+<span data-i18n="antenna">📡 Anten</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figcaption data-i18n="caption">Bir uygulama seç, duvardaki Ambilight ışığını değiştir. Philips 65PUS7906/62 referanslı temsilî oda; saat canlı Türkiye saati, hava ve cihaz değerleri örnektir.</figcaption>
+</figure>
+</section>
+<section class="feature-story" aria-label="Features">
+<h2 data-i18n="featureTitle">Ana ekran biraz nefes alsın.</h2>
+<div>
+<p data-i18n="featureBody">Kurulu TV uygulamaların kendi afişleriyle gelir. Seçtiğin uygulamanın rengi ana ekrana yayılır. HDMI’daki PlayStation’ın ve anten yayının hemen aşağıdadır.</p>
+<p data-i18n="featureMore">Selamlamanı ve hava durumunu kendine göre ayarla. Bu oda önizlemesinde uygulama seçtikçe duvar ışığı da değişir. Gerçek TV’de Ambilight düğmesi Philips’in ayar panelini açar; launcher duvar ışığını doğrudan yönetmez.</p>
+</div>
+</section>
+<section class="airplay-story" aria-labelledby="airplay-story-title">
+<h2 id="airplay-story-title" data-i18n="airplayStoryTitle">Bu TV’de AirPlay yoktu.<br> Onu da ekledik.</h2>
+<div>
+<p data-i18n="airplayStoryBody">Philips 65PUS7906/62’nin içinde AirPlay alıcısı yok. Ayrı bir açık kaynak alıcı kurarak iPhone ve Mac ekranını TV’ye yansıtabiliyorsun. Launcher, gerçek yansıtma başlayınca alıcıyı açıyor; bitince seni ana ekrana geri getiriyor.</p>
+<p class="airplay-path" data-i18n="airplayPath">iPhone / Mac <span aria-hidden="true">→</span> AirPlay alıcısı <span aria-hidden="true">→</span> TV</p>
+<p data-i18n="airplayStoryNote">Bu isteğe bağlı bir ek kurulum. Alıcı launcher’a dahil değil; otomatik geçiş için ADB üzerinden ek izinler gerekiyor. Ayrıntılar kurulum rehberinde.</p>
+<a class="download" id="airplay-guide" href="https://github.com/makallete/makallete-tv-launcher/blob/main/docs/KURULUM.md" data-i18n="airplayGuide">AirPlay kurulumunu aç</a>
+</div>
+</section>
+<section id="setup" class="setup">
+<h2 data-i18n="setupTitle">Adım adım, TV’ne.</h2>
+<p class="section-intro" data-i18n="setupIntro">Bilgisayarın ve TV’n aynı yerel ağda olsun. Kaynak dosyaları bilgisayarda tutacağız; TV’ye yalnızca APK kurulacak.</p>
+<ol>
+<li>
+<h3 data-i18n="step1">TV’nin modelini ve Android sürümünü kontrol et.</h3>
+<p data-i18n="body1">Ayarlar → Sistem / Cihaz tercihleri → Hakkında. Android 11 veya üzeri gerekiyor. Özgün uygulama Philips 65PUS7906/62’de kullanıldı; diğer modeller henüz doğrulanmadı.</p>
+</li>
+<li>
+<h3 data-i18n="step2">Projeyi indir, bilgisayarında bir klasöre aç.</h3>
+<p data-i18n="body2">Kaynak ZIP’i Masaüstü’ndeki tv-kurulum klasörüne çıkar. README.md ve gradlew dosyalarının bulunduğu proje kökünü Codex’e veya Claude Code’a aç. Bütün klasörü TV’ye kopyalama.</p>
+<a class="download" href="makallete-tv-launcher-source.zip" download data-i18n="download">Proje dosyalarını indir ↓</a>
+</li>
+<li>
+<h3 data-i18n="step3">Bağlantı ve derleme araçlarını hazırla.</h3>
+<p data-i18n="body3">Google Platform-Tools ZIP’ini tv-kurulum içine aç. İçindeki platform-tools klasöründe adb bulunmalı. Kaynaktan derlemek için Android Studio, JDK 17 ve Android SDK 34 gerekiyor. Aşağıdaki prompt bu adımlarda sana yol gösterecek.</p>
+<a class="download" href="https://developer.android.com/tools/releases/platform-tools" data-i18n="tools">Google Platform-Tools</a>
+</li>
+<li>
+<h3 data-i18n="step4">TV’de hata ayıklamayı aç ve bağlantıyı onayla.</h3>
+<p data-i18n="body4">Hakkında → Derleme satırına yedi kez bas. Geliştirici seçeneklerinden ağ / USB hata ayıklamayı aç. TV’nin IP adresiyle ADB bağlantısı kurulunca ekrandaki bilgisayar iznini onayla. Menü ve bağlantı yöntemi modele göre değişebilir.</p>
+</li>
+<li>
+<h3 data-i18n="step5">Prompt’u gönder, APK’yı kur ve önce dene.</h3>
+<p data-i18n="body5">Codex veya Claude Code kaynak koddan APK derleyebilir; varsa imzalı release’i kullanabilir. Kumandayla gezinmeyi, uygulamaları ve girişleri dene. Çalıştığını gördükten sonra Home tuşunda Makallete TV Launcher’ı seç. Mevcut ana ekranını kaldırma.</p>
+<a class="download" href="https://github.com/makallete/makallete-tv-launcher/releases" data-i18n="releases">APK sürümleri ve yayın notları</a>
+</li>
+<li>
+<h3 data-i18n="step6">Kendi ana ekranını tamamla.</h3>
+<p data-i18n="body6">Düzenle düğmesinden istersen adını ve şehrini ekle. AirPlay ayrı bir alıcı ve ek izinlerle kuruluyor; temel launcher için zorunlu değil. İşin bitince ADB’yi ayır ve hata ayıklamayı kapat.</p>
+</li>
+</ol>
+<p class="guide-link">
+<a class="github-link" id="guide" href="https://github.com/makallete/makallete-tv-launcher/blob/main/docs/KURULUM.md" data-i18n="guide">Komutları ve geri alma adımlarını aç</a>
+</p>
+</section>
+<section class="prompt-section">
+<h2 data-i18n="promptTitle">Kurulum için hazır prompt</h2>
+<p data-i18n="promptBody">İndirdiğin proje klasörünü Codex’e veya Claude Code’a aç. Sonra bu prompt’u gönder; bilgisayardaki işleri yapsın, TV’deki adımları sana anlatsın.</p>
+<div class="prompt-controls">
+<label for="setup-prompt" data-i18n="promptLabel">Codex / Claude Code’a gönder</label>
+<button type="button" class="primary" id="copy" data-i18n="copy">Prompt’u kopyala</button>
+</div>
+<textarea id="setup-prompt" readonly rows="11" spellcheck="false">
+</textarea>
+<p id="copy-status" role="status" aria-live="polite">
+</p>
+<noscript>
+<p>JavaScript kapalı. / JavaScript is disabled. <a href="install-prompt.tr.txt">Türkçe prompt</a> · <a href="install-prompt.en.txt">English prompt</a>
+</p>
+</noscript>
+</section>
+<section class="details-section">
+<h2 data-i18n="beforeTitle">Kurulmadan önce bil.</h2>
+<details>
+<summary data-i18n="compatTitle">TV’mle çalışır mı?</summary>
+<p data-i18n="compatBody">Android 11 ve üzeri gerekiyor. İlk cihaz Philips 65PUS7906/62 idi; bu paylaşım sürümünün farklı TV’lerde çalışması doğrulanmadı. HDMI, anten, varsayılan ana ekran seçimi ve Ambilight üreticiye bağlı. Uygulama arayüzü şu an Türkçe; bu site ve rehberler iki dilli.</p>
+</details>
+<details>
+<summary data-i18n="airTitle">AirPlay nasıl çalışıyor?</summary>
+<p data-i18n="airBody">Bu Philips modelinde yerleşik AirPlay alıcısı yok. iPhone ve Mac’ten yansıtma için io.github.jqssun.airplay ayrıca kuruluyor; alıcı launcher’a dahil değil. Otomatik geçiş için ADB ile kayıt okuma, kullanım erişimi ve ekran üstüne çizme izinleri gerekiyor. Bekçi alıcının log satırlarını izlediği için yeni alıcı sürümlerinde bozulabilir. İstemiyorsan bu özelliği kapalı bırak.</p>
+</details>
+<details>
+<summary data-i18n="privacyTitle">Hangi bilgiler paylaşılır?</summary>
+<p data-i18n="privacyBody">Selamlama ve şehir ayarı yalnızca TV’de saklanır. Şehir araması ve hava koordinatları Open-Meteo’ya gider. Hız testi elle başlatılır, Cloudflare’a bağlanır ve yaklaşık 25 MB indirebilir. Geliştiriciye veri gönderen bir sunucu veya analiz aracı yok. Site önizlemesi gerçek kişisel veri kullanmaz.</p>
+</details>
+<details>
+<summary data-i18n="restoreTitle">Eski ana ekranıma dönebilir miyim?</summary>
+<p data-i18n="restoreBody">Evet. Kurulumda eski Home bileşenini kaydet ve sistem launcher’ını koru. Varsayılan uygulamalar menüsünden ya da rehberdeki ADB komutuyla geri dönebilirsin. Launcher’ı kaldırmak yerel ayarlarını siler. Farklı imzalı APK’lar birbirinin üstüne kurulamaz; çalışan kurulumu otomatik kaldırma.</p>
+</details>
+<details>
+<summary data-i18n="licenseTitle">Açık kaynak, kendi TV’ne göre değiştir.</summary>
+<p data-i18n="licenseBody">Launcher ve site için MIT lisansı önerildi ve pakete eklendi. Fontların OFL lisansları korunuyor. Ayrı AirPlay alıcısının kendi GPL-3.0 lisansı var. Kodda uygulama sırasını ve gizlenen sistem paketlerini düzenleyebilirsin; bunların henüz ayar ekranı yok.</p>
+</details>
+</section>
+</main>
+<footer>
+<span>Developed by makallete</span>
+<a href="https://github.com/makallete/makallete-tv-launcher/blob/main/LICENSE">MIT License</a>
+<a href="https://open-meteo.com/">Weather data by Open-Meteo · CC BY 4.0</a>
+</footer>
+</body>
+</html>
