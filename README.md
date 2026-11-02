@@ -1,6 +1,6 @@
 # Makallete TV Launcher
 
-[English](README.en.md) · [Kurulum](docs/KURULUM.md) · [Installation](docs/SETUP.md)
+[Tanıtım sitesi](https://makallete-tv-launcher.netlify.app/) · [English](README.en.md) · [Kurulum](docs/KURULUM.md) · [Installation](docs/SETUP.md)
 
 Android TV için hafif, reklamsız bir ana ekran. Uygulamaların, HDMI girişlerin ve ihtiyacın olan birkaç araç aynı yerde. Kotlin ve Android'in kendi View sistemiyle yazıldı; uygulamada harici kütüphane yok.
 

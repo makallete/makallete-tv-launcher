@@ -18,3 +18,10 @@ private/
 
 # Generated download bundle; created from the tracked source.
 site/makallete-tv-launcher-source.zip
+
+# Local design and publication working notes
+.impeccable/
+docs/PRODUCT.md
+docs/DESIGN.md
+docs/PUBLICATION_AUDIT.md
+site/assets/**/*.webp.json

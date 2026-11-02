@@ -1,6 +1,6 @@
 # Makallete TV Launcher
 
-[Türkçe](README.md) · [Installation guide](docs/SETUP.md)
+[Website](https://makallete-tv-launcher.netlify.app/) · [Türkçe](README.md) · [Installation guide](docs/SETUP.md)
 
 A lightweight, ad-free home screen for Android TV. Apps, HDMI inputs and a handful of useful tools in one place. Built with Kotlin and Android platform Views, with no third-party runtime libraries.
 

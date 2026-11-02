@@ -17,7 +17,7 @@ else:
     files += [file for file in root.iterdir() if file.is_file() and
               (file.name in {'LICENSE', '.gitignore', '.gitattributes', 'gradlew', 'gradlew.bat', 'netlify.toml'} or
                file.suffix in {'.md', '.kts'} or file.name == 'gradle.properties')]
-    files += [root / 'app/build.gradle.kts', root / '.impeccable/design.json']
+    files += [root / 'app/build.gradle.kts']
 forbidden = {'.git', '.gradle', '.kotlin', 'build', '.netlify', '.idea', '__pycache__', 'private'}
 files = sorted(set(file for file in files if file.is_file() and file != target and
                    not forbidden.intersection(file.relative_to(root).parts) and
