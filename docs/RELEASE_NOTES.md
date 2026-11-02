@@ -1,20 +1,22 @@
 # 0.1.0-alpha
 
-Public-source preparation of the original Android TV launcher.
+Android TV için reklamsız bir ana ekran. Android 11 ve üzeri için ilk alpha sürümü.
 
-- Removed fixed household greeting and location. Added private device preferences, city lookup and opt-in AirPlay handover.
-- Preserved dynamic app banners, focus color, remote navigation, inputs and existing utility actions.
-- Hide Ambilight on devices without a resolvable Philips action. Added launcher icon/banner and TV app entry point.
-- Release builds no longer fall back to the debug key. Private signing material stays outside the source tree.
-- Added Turkish/English README, numbered setup, agent prompts, MIT license, font notices, CI and a bilingual static Netlify site with fictional demonstration data.
+- Afişli uygulama listesi, kumandayla gezinme ve uygulamaya göre değişen arka plan rengi.
+- HDMI/CEC ve anten girişleri; desteklenen Philips modellerinde Ambilight ayarları.
+- Saat, tarih, kişisel selamlama ve şehir seçimiyle hava durumu.
+- Hız testi ve bellek araçları.
+- Ayrı AirPlay alıcısıyla otomatik geçiş ve yansıtma sonunda launcher’a dönüş.
+- Türkçe uygulama arayüzü; Türkçe ve İngilizce kurulum rehberleri.
 
-## Verification
+## Uyumluluk
 
-JDK 17 / SDK 34: `assembleDebug lintDebug assembleRelease lintRelease` passed. Lint retains warnings about platform View constructors, Turkish app strings, draw allocation, TV landscape orientation and banner size. Only `ExpiredTargetSdkVersion` is disabled, explicitly because this release is an Android 11 sideload app rather than a Play Store submission. Target/min SDK remain 30 to preserve the original device behavior.
+Proje Philips 65PUS7906/62 ve Android 11 için geliştirildi. Bu APK sürümü fiziksel TV’de doğrulanmadı; diğer modellerde HDMI, anten, Ambilight ve AirPlay davranışı değişebilir. Kurulum ve eski ana ekrana dönüş adımları kurulum rehberinde bulunur.
 
-Signed APK verified with Android SDK apksigner. Public signing certificate SHA-256:
-`fa4a021c1069a04bcb48a3dd424de07e7ccc4f4bd5b7d480e31cc82f525ac051`.
+## Derleme doğrulaması
 
-Website checked at desktop and 390px mobile: Turkish/English switch, matching prompt, copy action, fictional app focus and horizontal overflow. Build artifacts, local SDK paths, old handoff, device maintenance records, private screenshots and signing keys are excluded from the public source archive.
+JDK 17 ve Android SDK 34 ile `assembleDebug lintDebug assembleRelease lintRelease` kontrolleri geçti. Lint uyarıları View constructor’ları, Türkçe arayüz metinleri, çizim sırasında nesne oluşturma, TV ekran yönü ve banner boyutunu kapsar. Minimum ve hedef API 30’dur. ADB ile kurulum için dağıtılır; Play Store yayını için hazırlanmadığından `ExpiredTargetSdkVersion` kontrolü devre dışıdır.
 
-**Physical TV validation has not been performed on this edited release.** The original private version's device history is not a test result for this APK. Treat this as an alpha and follow the compatibility/recovery guide. Android app UI remains Turkish.
+İmzalı APK, Android SDK apksigner ile doğrulandı. İmza sertifikasının SHA-256 değeri:
+
+`fa4a021c1069a04bcb48a3dd424de07e7ccc4f4bd5b7d480e31cc82f525ac051`
